@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linearTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/size_8"
+        android:baselineAligned="false"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvItemName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:fontFamily="@font/poppins_regular"
+            android:singleLine="true"
+            android:text="1- Item 1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_12" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvItemPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/size_25"
+                android:fontFamily="@font/poppins_semibold"
+                android:drawableStart="@drawable/ic_rupee_symbol"
+                android:paddingHorizontal="@dimen/size_10"
+                android:background="@drawable/rounded_corner_4dp"
+                android:includeFontPadding="false"
+                android:gravity="center_vertical"
+                android:text="1200"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_12"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+                <LinearLayout
+                    android:id="@+id/addQuantityLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/size_25"
+                    android:orientation="horizontal"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+                    <TextView
+                        android:id="@+id/btnMinus"
+                        android:layout_width="@dimen/size_25"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_corner_left_4dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:fontFamily="@font/muli_semibold"
+                        android:gravity="center"
+                        android:text="@string/minus"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_16" />
+
+                    <EditText
+                        android:id="@+id/etItemQty"
+                        android:layout_width="@dimen/size_30"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_border_blue"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:text="34"
+                        android:fontFamily="@font/muli_semibold"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_14" />
+
+                    <TextView
+                        android:id="@+id/btnPlus"
+                        android:layout_width="@dimen/size_25"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_corner_right_4dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:fontFamily="@font/muli_semibold"
+                        android:gravity="center"
+                        android:text="@string/plus"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_16" />
+
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tvAddQty"
+                    android:layout_width="@dimen/size_0"
+                    android:layout_height="0dp"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:visibility="invisible"
+                    android:fontFamily="@font/poppins_regular"
+                    android:background="@drawable/bg_blue_rounded_corner_4dp"
+                    android:text="Add"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_size_14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_1"
+        android:background="@color/devider_color_reports"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

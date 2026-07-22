@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="6dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutConveyance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="15dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_40"
+            android:gravity="center_vertical"
+            android:text="Add Customer"
+            android:textColor="@color/black_text_color"
+            android:textSize="@dimen/text_size_14"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/btnClose"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/close_circle_fill"
+            app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvTitle" />
+
+
+        <!--        <View-->
+        <!--            android:id="@+id/divHeader"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="1dp"-->
+        <!--            android:layout_marginTop="5dp"-->
+        <!--            android:background="@color/gray_60"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />-->
+
+
+        <LinearLayout
+            android:id="@+id/linearFormData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnClose">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_8"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutAmount">
+
+                <TextView
+                    android:id="@+id/tvCompanyNameLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/dimen_4"
+                    android:text="@string/company_name"
+                    android:textColor="@color/black_text_color"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/etCompanyName"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="@dimen/dimen_4"
+                    android:background="@drawable/rounded_corner_4dp"
+                    android:hint="Company Name"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/dimen_4"
+                    android:textColor="@color/black_text_color"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_12"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/dimen_4"
+                    android:text="@string/address"
+                    android:textColor="@color/black_text_color"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/etAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="@dimen/dimen_4"
+                    android:background="@drawable/rounded_corner_4dp"
+                    android:hint="Address"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/dimen_4"
+                    android:textColor="@color/black_text_color"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_12"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etLocation">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/dimen_4"
+                    android:text="@string/pin_code"
+                    android:textColor="@color/black_text_color"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/etPinCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="@dimen/dimen_8"
+                    android:background="@drawable/rounded_corner_4dp"
+                    android:hint=" Pin Code"
+                    android:inputType="number"
+                    android:maxLength="6"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/dimen_4"
+                    android:textColor="@color/black_text_color"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:textSize="12sp"
+                    android:visibility="visible" />
+                />
+
+            </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_12"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/barrier" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/dimen_4"
+                android:text="@string/mobile"
+                android:textColor="@color/black_text_color"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/etMobile"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_corner_4dp"
+                android:hint="Mobile"
+                android:inputType="number"
+                android:maxLength="10"
+                android:paddingLeft="@dimen/dimen_4"
+                android:textColor="@color/black_text_color"
+                android:textColorHint="@android:color/darker_gray"
+                android:textSize="11sp"
+                android:visibility="visible"
+               />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_12"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/barrier" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/dimen_4"
+                android:text="@string/contact_person_name"
+                android:textColor="@color/black_text_color"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/etContactPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_corner_4dp"
+                android:hint="contact person name"
+                android:paddingLeft="@dimen/dimen_4"
+                android:textColor="@color/black_text_color"
+                android:textColorHint="@android:color/darker_gray"
+                android:textSize="11sp"
+                android:visibility="visible"
+                 />
+
+        </LinearLayout>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/btnCancel"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/cancel_8dp"
+            android:gravity="center"
+            android:text="Cancel"
+            android:textColor="@color/black_text_color"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnSave"
+            app:layout_constraintTop_toBottomOf="@id/linearFormData" />
+
+        <TextView
+            android:id="@+id/btnSave"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/save_8dp"
+            android:gravity="center"
+            android:text="Save"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearFormData" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

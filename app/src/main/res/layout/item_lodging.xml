@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#DCDCDC"
+    android:padding="6dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutLodging"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ex_concey_bg"
+        android:padding="15dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/lvlFromDate"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:alpha="1"
+            android:drawablePadding="3dp"
+            android:drawableTint="@color/black_text_color"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:text="From"
+            android:textColor="@color/black_text_color"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent=".22" />
+
+        <TextView
+            android:id="@+id/lvlToDate"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="@dimen/dimen_8"
+            android:alpha="1"
+            android:drawablePadding="3dp"
+            android:drawableTint="@color/black_text_color"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:text="To"
+            android:textColor="@color/black_text_color"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/lvlFromDate"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent=".22" />
+
+        <TextView
+            android:id="@+id/tvFromDate"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="8dp"
+            android:alpha=".7"
+            android:background="@drawable/rounded_corner_4dp"
+            android:drawableEnd="@drawable/ic_calendar_icon"
+            android:drawablePadding="3dp"
+            android:drawableTint="@color/black_text_color"
+            android:gravity="center"
+            android:text="01 Aug"
+            android:textColor="@color/black_text_color"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lvlFromDate"
+            app:layout_constraintWidth_percent=".23" />
+
+        <TextView
+            android:id="@+id/tvToDate"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="@dimen/dimen_8"
+            android:alpha=".7"
+            android:background="@drawable/rounded_corner_4dp"
+            android:drawableEnd="@drawable/ic_calendar_icon"
+            android:drawablePadding="3dp"
+            android:drawableTint="@color/black_text_color"
+            android:gravity="center"
+            android:text="01 Aug"
+            android:textColor="@color/black_text_color"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/tvFromDate"
+            app:layout_constraintTop_toTopOf="@id/tvFromDate"
+            app:layout_constraintWidth_percent=".23" />
+
+        <EditText
+            android:id="@+id/etLodgeLocation"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_corner_4dp"
+            android:hint="Location"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/dimen_4"
+            android:textColor="@color/black_text_color"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvFromDate"
+            app:layout_constraintTop_toBottomOf="@id/tvFromDate" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etNoOfPeople"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/rounded_corner_4dp"
+            android:hint="No. of People"
+            android:maxLines="1"
+            android:paddingLeft="6dp"
+            android:inputType="number"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/etHotelName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/etHotelName"
+            app:layout_constraintTop_toTopOf="@id/etHotelName"
+            app:layout_constraintWidth_percent=".35" />
+
+        <EditText
+            android:id="@+id/etHotelName"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_corner_4dp"
+            android:hint="Hotel Name"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/dimen_4"
+            android:textColor="@color/black_text_color"
+            android:textSize="11sp"
+            app:layout_constraintStart_toStartOf="@id/etLodgeLocation"
+            app:layout_constraintTop_toBottomOf="@id/etLodgeLocation"
+            app:layout_constraintWidth_percent=".6" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutLodgeAmount"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/rounded_corner_4dp"
+            app:layout_constraintStart_toEndOf="@+id/tvToDate"
+            app:layout_constraintTop_toTopOf="@id/tvToDate"
+            app:layout_constraintWidth_percent=".4">
+
+            <TextView
+                android:id="@+id/tvLodgeRupee"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:gravity="center"
+                android:text="\u20B9"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent=".13" />
+
+            <View
+                android:id="@+id/viewLodge"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintStart_toEndOf="@id/tvLodgeRupee"></View>
+
+            <EditText
+                android:id="@+id/etLodgeAmount"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:background="#0000"
+                android:gravity="center_vertical"
+                android:hint="Amount"
+                android:maxLines="1"
+                android:inputType="number"
+                android:paddingLeft="@dimen/dimen_4"
+                android:textColor="@color/black_text_color"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/viewLodge"
+                app:layout_constraintTop_toTopOf="@id/viewLodge" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <ImageView
+            android:id="@+id/tvCamera"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ex_camera_border"
+            android:padding="3dp"
+            android:src="@drawable/camera_icon"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etHotelName"
+            app:tint="#039E3A" />
+
+        <ImageView
+            android:id="@+id/ivDelete"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            android:padding="3dp"
+            android:src="@drawable/delete_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etHotelName"
+            app:tint="@color/black_text_color" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

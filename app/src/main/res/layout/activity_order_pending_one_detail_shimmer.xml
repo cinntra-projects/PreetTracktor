@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".orderUi.ui.OrderPendingOneDetailActivity">
+
+    <ScrollView
+        android:id="@+id/scrolView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+
+
+            <LinearLayout
+                android:id="@+id/linearCustomerDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                >
+
+                <TextView
+                    android:id="@+id/tvCustomerName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_8"
+                    android:layout_marginTop="@dimen/size_8"
+                    android:layout_marginBottom="@dimen/size_2"
+                    android:background="@color/grey"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="ABC Pvt. ltd."
+
+                    android:textSize="@dimen/text_size_16" />
+
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_8"
+                    android:layout_marginTop="@dimen/size_8"
+                    android:layout_marginBottom="@dimen/size_2"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="ABC Pvt. ltd."
+                    android:background="@color/grey"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/text_size_16" />
+
+                <TextView
+                    android:id="@+id/tvOrderHash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_8"
+                    android:layout_marginTop="@dimen/size_8"
+                    android:layout_marginBottom="@dimen/size_2"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Order #:1, 1"
+                    android:background="@color/grey"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/text_size_16" />
+
+                <TextView
+                    android:id="@+id/tvRefHsh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_8"
+                    android:layout_marginTop="@dimen/size_8"
+                    android:layout_marginBottom="@dimen/size_2"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Ref #:1, 1"
+                    android:background="@color/grey"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/text_size_16" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/headingForBills"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_15"
+                android:layout_marginTop="@dimen/size_10"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_bold"
+                android:padding="@dimen/size_4"
+                android:background="@color/grey"
+                android:textColor="@color/grey"
+
+                android:textSize="@dimen/text_size_18"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/linearCustomerDetails" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvBillsItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/grey"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/headingForBills" />
+
+            <LinearLayout
+                android:id="@+id/linearNetAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@id/rvBillsItem">
+
+                <TextView
+                    android:id="@+id/headingGrandTotals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_15"
+                    android:layout_marginTop="@dimen/size_10"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_bold"
+                    android:padding="@dimen/size_4"
+                    android:text="Net Amount"
+                    android:background="@color/grey"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/text_size_18" />
+
+                <TextView
+
+                    android:id="@+id/tvNetAmountTotals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_10"
+                    android:layout_marginEnd="@dimen/size_15"
+
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="end"
+                    android:padding="@dimen/size_4"
+                    android:text="@string/amount_default"
+                    android:background="@color/grey"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/text_size_18" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/headingSummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_15"
+                android:layout_marginTop="@dimen/size_10"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_bold"
+                android:padding="@dimen/size_4"
+                android:text="@string/summary"
+                android:background="@color/grey"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/text_size_18"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/linearNetAmount" />
+
+            <LinearLayout
+                android:id="@+id/linearGrossAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@id/headingSummary">
+
+                <TextView
+                    android:id="@+id/headingGrossTotals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_15"
+                    android:layout_marginTop="@dimen/size_10"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_bold"
+                    android:padding="@dimen/size_4"
+                    android:text="@string/gross_total"
+                    android:background="@color/grey"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/text_size_18" />
+
+                <TextView
+
+                    android:id="@+id/tvGrossTotals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_10"
+                    android:layout_marginEnd="@dimen/size_15"
+
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="end"
+                    android:padding="@dimen/size_4"
+                    android:text="@string/amount_default"
+                    android:background="@color/grey"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/text_size_18" />
+
+
+            </LinearLayout>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

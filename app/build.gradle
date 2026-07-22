@@ -1,0 +1,307 @@
+import java.text.SimpleDateFormat
+
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id "androidx.navigation.safeargs.kotlin"
+    id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+    id 'kotlin-parcelize'
+}
+
+android {
+    applicationVariants.configureEach { variant ->
+
+        variant.outputs.configureEach { output ->
+
+            def date = new SimpleDateFormat("ddMMyyyy").format(new Date())
+
+            outputFileName =
+                    "PreetGalaxyAndroid_${variant.flavorName}_${variant.buildType.name}_${date}_v${variant.versionName}.apk"
+        }
+    }
+    namespace "com.preetTractor.galaxyAndroid"
+
+    compileSdk 34
+
+    defaultConfig {
+
+        applicationId "com.preetTractor.galaxyAndroid"
+
+        minSdk 24
+        targetSdk 34
+
+        versionCode 3
+        versionName "3.0"
+    }
+
+    // =====================================================
+    // BUILD TYPES
+    // =====================================================
+
+    buildTypes {
+
+        debug {
+
+            debuggable true
+
+            minifyEnabled false
+        }
+
+        release {
+
+            debuggable false
+
+            minifyEnabled true
+
+            shrinkResources true
+
+            proguardFiles(
+                    getDefaultProguardFile(
+                            "proguard-android-optimize.txt"
+                    ),
+                    "proguard-rules.pro"
+            )
+        }
+    }
+
+    // =====================================================
+    // PRODUCT FLAVORS
+    // =====================================================
+
+    flavorDimensions += "server"
+
+    productFlavors {
+
+        register("dev") {
+
+            dimension = "server"
+            versionNameSuffix = "-DEV"
+            buildConfigField(
+                    "String",
+                    "SOCKET_URL",
+                    "\"ws://103.197.76.50:8019/ws\""
+            )
+            buildConfigField(
+                    "String",
+                    "BASE_URL",
+                    "\"http://103.197.76.50:8090/\""
+            )
+
+            buildConfigField(
+                    "String",
+                    "IMAGE_URL",
+                    "\"http://103.197.76.50:8090\""
+            )
+
+            buildConfigField(
+                    "String",
+                    "SUPER_ADMIN_BASE_URL",
+                    "\"http://103.197.76.50:8045/\""
+            )
+
+            buildConfigField(
+                    "String",
+                    "PDF_URL",
+                    "\"http://103.197.76.50:8090/assets/newhtml/\""
+            )
+        }
+
+        register("prod") {
+
+            dimension = "server"
+            versionNameSuffix = "-LIVE"
+
+            buildConfigField(
+                    "String",
+                    "SOCKET_URL",
+                    "\"wss://preet.bridgexd.com/ws\""
+            )
+
+            buildConfigField(
+                    "String",
+                    "BASE_URL",
+                    "\"https://preet.bridgexd.com/api/\""
+            )
+
+            buildConfigField(
+                    "String",
+                    "IMAGE_URL",
+                    "\"https://preet.bridgexd.com/api\""
+            )
+
+            buildConfigField(
+                    "String",
+                    "SUPER_ADMIN_BASE_URL",
+                    "\"https://admin.bridgexd.com/\""
+            )
+
+            buildConfigField(
+                    "String",
+                    "PDF_URL",
+                    "\"https://preet.bridgexd.com/api/assets/newhtml/\""
+            )
+        }
+    }
+
+    compileOptions {
+
+        sourceCompatibility JavaVersion.VERSION_17
+
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+
+        jvmTarget = "17"
+    }
+
+    buildFeatures {
+
+        viewBinding true
+
+        buildConfig true
+    }
+}
+
+dependencies {
+    //circleImageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    //country code picker
+    implementation 'com.hbb20:ccp:2.5.0'
+    //implementation project(':VKChartLib')
+    implementation project(':monthandyearpicker')
+    implementation 'com.github.AnyChart:AnyChart-Android:1.1.2'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    //Easy Permissions
+    implementation 'pub.devrel:easypermissions:3.0.0'
+
+    //motion toast
+    implementation 'com.github.Spikeysanju:MotionToast:1.4'
+    implementation 'com.github.azikar24:MonthYearPicker:1.0.0'
+    //map fragment
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
+
+    //todo set new dependencies--
+
+    // Crashlytics
+    implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
+    implementation("com.google.firebase:firebase-crashlytics")
+    implementation("com.google.firebase:firebase-analytics")
+
+
+    // Retrofit + GSON
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation 'com.squareup.okhttp3:okhttp:4.5.0'
+    implementation "com.squareup.okhttp3:logging-interceptor:4.5.0"
+    implementation "com.squareup.retrofit2:converter-scalars:$retrofitVersion"
+
+    //material ui dependency
+    implementation "com.google.android.material:material:$materialVersion"
+
+    // Navigation Component
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+
+
+    //swipeToRefreshLayout
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
+
+    //sharedPref
+    implementation 'com.pixplicity.easyprefs:EasyPrefs:1.10.0'
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+
+    //Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+    implementation 'com.google.android.gms:play-services-location:21.3.0'
+    implementation 'com.google.android.gms:play-services-maps:19.0.0'
+    implementation 'androidx.activity:activity:1.8.0'
+    implementation 'androidx.room:room-common:2.6.1'
+    kapt "org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.4.2"
+
+    //livedata ktx
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
+
+    //powerSpinner
+    implementation "com.github.skydoves:powerspinner:1.2.7"
+
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+
+    //otp
+    implementation 'com.github.mukeshsolanki.android-otpview-pinview:otpview:3.1.0'
+    implementation 'com.github.aabhasr1:OtpView:v1.1.2-ktx'
+
+
+    //lottie
+    implementation 'com.airbnb.android:lottie:6.3.0'
+
+
+    implementation "androidx.camera:camera-camera2:$camerax_version"
+// CameraX Lifecycle Library
+    implementation "androidx.camera:camera-lifecycle:$camerax_version"
+// CameraX View class
+    implementation "androidx.camera:camera-view:1.0.0-alpha27"
+
+
+// Text features
+    implementation "com.google.android.gms:play-services-mlkit-text-recognition:$mlKitVersion"
+
+// gallery picker
+    implementation 'com.github.dhaval2404:imagepicker:2.1'
+
+
+    //viewlifecycleowner
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1"
+
+
+
+
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.2'
+
+
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    //facebk shimmer
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    implementation 'androidx.work:work-runtime-ktx:2.9.1'
+    implementation 'com.github.pramodkr123:ConvertWebViewToPdfDemo:1.0.5'
+
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0"
+
+    implementation 'com.google.firebase:firebase-messaging:23.2.1' // Use latest version
+    //room
+
+    implementation("androidx.room:room-runtime:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
+    kapt("androidx.room:room-compiler:2.6.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.9.0")
+    implementation 'com.github.f0ris.sweetalert:library:1.5.1'
+    implementation 'com.karumi:dexter:5.0.0'
+
+}
+configurations.all {
+    exclude group: "org.jetbrains.kotlin", module: "kotlin-android-extensions-runtime"
+}

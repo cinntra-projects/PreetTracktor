@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/dimen_8"
+    android:paddingTop="@dimen/dimen_4"
+    android:paddingRight="@dimen/dimen_8">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearTrackingDetails"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+
+        android:background="@drawable/rounded_corner_4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        >
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="time"
+            android:textColor="#414141"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent=".2" />
+
+
+        <!--
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintWidth_percent="30"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvDate"
+                    app:layout_constraintTop_toTopOf="@+id/tvDate"
+                    android:orientation="vertical">-->
+
+        <TextView
+            android:id="@+id/tvCheckInTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="time"
+            android:textColor="#414141"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/tvTimeCheckOut"
+            app:layout_constraintStart_toEndOf="@+id/tvDate"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent=".3" />
+
+        <LinearLayout
+            android:id="@+id/checkInLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tvCheckInTime"
+            app:layout_constraintStart_toStartOf="@+id/tvCheckInTime"
+            app:layout_constraintTop_toBottomOf="@+id/tvCheckInTime">
+
+            <ImageView
+                android:id="@+id/ivChekcInImage"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_margin="1dp"
+                android:background="@drawable/rounded_corner_4dp"
+                android:src="@drawable/ic_image" />
+
+            <ImageView
+                android:id="@+id/ivcheckInPin"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_margin="1dp"
+                android:background="@drawable/rounded_corner_4dp"
+                android:src="@drawable/ic_pin" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tvTimeCheckOut"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="time"
+            android:textColor="#414141"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/tvTotalHrs"
+            app:layout_constraintStart_toEndOf="@id/tvCheckInTime"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent=".3" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/tvTimeCheckOut"
+            app:layout_constraintStart_toStartOf="@id/tvTimeCheckOut"
+            app:layout_constraintTop_toBottomOf="@+id/tvTimeCheckOut">
+
+            <ImageView
+                android:id="@+id/ivCheckOutImage"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@drawable/rounded_corner_4dp"
+                android:src="@drawable/ic_image" />
+
+            <ImageView
+                android:id="@+id/ivCheckOutPin"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_margin="1dp"
+                android:background="@drawable/rounded_corner_4dp"
+                android:src="@drawable/ic_pin" />
+
+        </LinearLayout>
+
+
+        <!--     </LinearLayout>-->
+
+        <TextView
+            android:id="@+id/tvTotalHrs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="Hrs"
+            android:textColor="#414141"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent=".2" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

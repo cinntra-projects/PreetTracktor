@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph.xml"
+    app:startDestination="@id/placeOrderFragment">
+
+    <fragment
+        android:id="@+id/placeOrderFragment"
+        android:name="com.preetTractor.galaxyAndroid.ui.orderUi.fragment.PlaceOrderFragment"
+        android:label="placed_order"
+        tools:layout="@layout/fragment_place_order" />
+    <fragment
+        android:id="@+id/dispatchedOrderFragment"
+        android:name="com.preetTractor.galaxyAndroid.ui.orderUi.fragment.DispatchedOrderFragment"
+        android:label="dispatched_order"
+        tools:layout="@layout/fragment_dispatched_order" />
+    <fragment
+        android:id="@+id/pendingOrderFragment"
+        android:name="com.preetTractor.galaxyAndroid.ui.orderUi.fragment.PendingOrderFragment"
+        android:label="pending_order"
+        tools:layout="@layout/fragment_pending_order" >
+    </fragment>
+
+</navigation>

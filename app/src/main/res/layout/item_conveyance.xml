@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="6dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutConveyance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="15dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_40"
+            android:gravity="center_vertical"
+            android:text="Adding Food(Local)"
+            android:textColor="@color/black_text_color"
+            android:textSize="@dimen/text_size_14"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/btnClose"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/close_circle_fill"
+            app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvTitle" />
+
+        <TextView
+            android:id="@+id/lvlFromDate"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:alpha="1"
+            android:drawablePadding="3dp"
+            android:drawableTint="@color/black_text_color"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:text="From"
+            android:textColor="@color/black_text_color"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tvDate"
+            app:layout_constraintStart_toStartOf="@id/tvDate"
+            app:layout_constraintTop_toBottomOf="@id/divHeader" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/bartop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="lvlFromDate,lvlToDate,divHeader" />
+
+
+        <TextView
+            android:id="@+id/lvlToDate"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="@dimen/dimen_8"
+            android:alpha="1"
+            android:drawablePadding="3dp"
+            android:drawableTint="@color/black_text_color"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:text="To"
+
+            android:textColor="@color/black_text_color"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tvToDate"
+            app:layout_constraintStart_toStartOf="@id/tvToDate"
+            app:layout_constraintTop_toBottomOf="@id/divHeader" />
+
+        <EditText
+            android:id="@+id/tvDate"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:alpha=".7"
+            android:background="@drawable/rounded_corner_4dp"
+            android:drawableEnd="@drawable/ic_calendar_icon"
+            android:drawablePadding="3dp"
+            android:drawableTint="@color/black_text_color"
+            android:editable="false"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="01 Aug"
+            android:textColor="@color/black_text_color"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bartop"
+            app:layout_constraintWidth_percent=".48" />
+
+        <EditText
+            android:id="@+id/tvToDate"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:alpha=".7"
+            android:background="@drawable/rounded_corner_4dp"
+            android:drawableEnd="@drawable/ic_calendar_icon"
+            android:drawablePadding="3dp"
+            android:drawableTint="@color/black_text_color"
+            android:editable="false"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="10 Aug"
+            android:textColor="@color/black_text_color"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/tvDate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.7"
+            app:layout_constraintStart_toEndOf="@id/tvDate"
+            app:layout_constraintTop_toTopOf="@id/tvDate"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintWidth_percent=".49" />
+
+        <View
+            android:id="@+id/divHeader"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/gray_60"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+        <TextView
+            android:id="@+id/tvDate1"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:alpha=".7"
+            android:background="@drawable/rounded_corner_4dp"
+            android:drawableEnd="@drawable/ic_calendar_icon"
+            android:drawablePadding="3dp"
+            android:drawableTint="@color/black_text_color"
+            android:gravity="center"
+            android:text="01 Aug"
+            android:textColor="@color/black_text_color"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent=".21" />
+
+        <EditText
+            android:id="@+id/etLocation"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:background="@drawable/rounded_corner_4dp"
+            android:hint="Location"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/dimen_4"
+            android:textColor="@color/black_text_color"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutAmount" />
+
+        <EditText
+            android:id="@+id/etHotelName"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:background="@drawable/rounded_corner_4dp"
+            android:hint="Hotel Name"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/dimen_4"
+            android:textColor="@color/black_text_color"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etLocation"
+            app:layout_constraintWidth_percent=".68" />
+
+        <EditText
+            android:id="@+id/etNoOfPeople"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="3dp"
+            android:background="@drawable/rounded_corner_4dp"
+            android:hint="No of people"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/dimen_4"
+            android:textColor="@color/black_text_color"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/etHotelName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/etHotelName"
+            app:layout_constraintTop_toTopOf="@id/etHotelName"
+            app:layout_constraintWidth_percent=".3" />
+
+        <EditText
+            android:id="@+id/edNameOfPersons"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:background="@drawable/rounded_corner_4dp"
+            android:hint="Name of People"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/dimen_4"
+            android:textColor="@color/black_text_color"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etNoOfPeople" />
+
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupLodge"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:constraint_referenced_ids="etHotelName,etNoOfPeople,lvlToDate,tvToDate,lvlFromDate,tvToDate" />
+
+        <EditText
+            android:id="@+id/etToLocation"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:background="@drawable/rounded_corner_4dp"
+            android:hint=" To Location"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/dimen_4"
+            android:textColor="@color/black_text_color"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="12sp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etLocation" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="etLocation,etToLocation" />
+
+        <TextView
+            android:id="@+id/headingBillCopy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_4"
+            android:text="Bill Copy:"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/spinnerMode"
+            app:layout_constraintEnd_toStartOf="@id/spinnerMode"
+            app:layout_constraintStart_toEndOf="@id/tvDate"
+            app:layout_constraintTop_toTopOf="@id/spinnerMode" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinnerMode"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:autofillHints="Mode"
+            android:background="@drawable/rounded_corner_4dp"
+            android:entries="@array/mode_spinner"
+            android:textSize="11sp"
+
+            app:layout_constraintBottom_toBottomOf="@id/tvDate"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintTop_toTopOf="@id/tvDate"
+            app:layout_constraintWidth_percent=".49" />
+
+        <EditText
+            android:id="@+id/etKm"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:hint="Km"
+            android:background="@drawable/rounded_corner_4dp"
+            android:inputType="number"
+            android:maxLines="1"
+            android:layout_marginTop="@dimen/size_8"
+            android:paddingLeft="@dimen/dimen_4"
+            android:paddingRight="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="11sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDate"
+          app:layout_constraintStart_toStartOf="parent"
+
+            />
+
+
+        <EditText
+            android:id="@+id/etRemark"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_corner_4dp"
+            android:hint="Remark"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/dimen_4"
+            android:textColor="@color/black_text_color"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="11sp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/barrier" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinnerMeal"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_corner_4dp"
+            android:prompt="@string/spinner_meal"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/barrier" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutAmount"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:background="@drawable/rounded_corner_4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etKm">
+
+            <TextView
+                android:id="@+id/tvRupee"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:gravity="center"
+                android:text="\u20B9"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent=".03" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintStart_toEndOf="@id/tvRupee"></View>
+
+            <EditText
+                android:id="@+id/etAmount"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:background="#0000"
+                android:gravity="center_vertical"
+                android:hint="Amount"
+                android:inputType="number"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/dimen_4"
+                android:paddingRight="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@android:color/darker_gray"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/view"
+                app:layout_constraintTop_toTopOf="@id/view" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barLodge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="etRemark,etHotelName" />
+
+        <ImageView
+            android:id="@+id/tvCamera"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/ex_camera_border"
+            android:padding="3dp"
+            android:src="@drawable/camera_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edNameOfPersons"
+            app:tint="#039E3A" />
+
+        <ImageView
+            android:id="@+id/ivViewAttachment"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:background="@drawable/ex_camera_border"
+            android:padding="3dp"
+            android:src="@drawable/ic_image"
+            android:visibility="visible"
+            app:layout_constraintStart_toEndOf="@id/tvCamera"
+            app:layout_constraintTop_toTopOf="@id/tvCamera"
+             />
+
+        <ImageView
+            android:id="@+id/ivDelete"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            android:padding="3dp"
+            android:src="@drawable/delete_icon"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etRemark"
+            app:tint="@color/black_text_color" />
+
+        <TextView
+            android:id="@+id/btnCancel"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/cancel_8dp"
+            android:gravity="center"
+            android:text="Cancel"
+            android:textColor="@color/black_text_color"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnSave"
+            app:layout_constraintTop_toBottomOf="@id/tvCamera" />
+
+        <TextView
+            android:id="@+id/btnSave"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/save_8dp"
+            android:gravity="center"
+            android:text="Save"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCamera" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

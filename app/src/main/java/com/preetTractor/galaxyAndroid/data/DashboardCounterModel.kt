@@ -1,0 +1,32 @@
+package com.preetTractor.galaxyAndroid.data
+
+data class DashboardCounterModel(
+    val AchievementData: AchievementData,
+    val Close: Int,
+    val Customer: Int,
+    val Leads: Int,
+    val Open: Int,
+    val Opportunity: Int,
+    val Order: Int,
+    val Over: Int,
+    val Quotation: Int,
+    val SalesEmployeeCode_arr: List<String>,
+    val TargetData: TargetData,
+    val Weekly_Customers: Int,
+    val Weekly_Leads: Int,
+    val Weekly_Opportunity: Int,
+    val Weekly_Order: Int,
+    val Weekly_Payment_Collection: Int,
+    val Weekly_Quotation: Int,
+    val Weekly_Total_Revenue: Double,
+    val Weekly_Total_Sale: Double,
+    val amount: Double,
+    val campset_count: Int,
+    val end_of_week: String,
+    val expense_all: Int,
+    val notification: Int,
+    val payment_all: Int,
+    val sale: Double,
+    val sale_diff: Int,
+    val start_of_week: String
+)

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/teamsFragment"
+        android:contentDescription=""
+        android:icon="@drawable/ic_team"
+        android:title="Team"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/dashboardFragment"
+        android:icon="@drawable/ic_dashboard_bottom"
+        android:title="Dashboard"
+        android:visible="true"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/attendanceBottomTabFragment"
+        android:icon="@drawable/ic_calendar_icon"
+        android:title="Attendance"
+        app:showAsAction="ifRoom" />
+
+
+
+    <item
+        android:id="@+id/fragmentCustomerMap"
+        android:visible="false"
+        android:icon="@drawable/customer"
+        android:title="Customer"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/mediaFragment"
+        android:icon="@drawable/ic_media_icon"
+        android:title="Media"
+        android:visible="false"
+        app:showAsAction="always" />
+
+
+</menu>

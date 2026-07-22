@@ -1,0 +1,52 @@
+package com.preetTractor.galaxyAndroid.orderUi.model.response
+
+data class ResponseItemListFromSubCategory(
+    val `data`: List<Data>,
+    val message: String,
+    val status: Int
+){
+    data class Data(
+        var itemquantity : Int,
+        var CatID: String,
+        var CategoryImage: String,
+        var CodeType: String,
+        var CreateDate: String,
+        var CreateTime: String,
+        var CreatedDate: String,
+        var CreatedTime: String,
+        var Currency: String,
+        var DMS_Offer_Discount: String,
+        var DMS_Offer_Status: String,
+        var DMS_Scheme_Id: String,
+        var Description: String,
+        var Discount: String,
+        var GSTTaxCategory: String,
+        var HSN: String,
+        var Image: String,
+        var Inventory: String,
+        var ItemCode: String,
+        var ItemName: String,
+        var ItemsGroupCode: String,
+        var Packing: String,
+        var SalesItemsPerUnit: String,
+        var SalesQtyPerPackUnit: String,
+        var Status: String,
+        var SubCategoryImage: String,
+        var TaxCode: String,
+        var U_GST: String,
+        var U_UTL_ITMCT: String,
+        var U_UTL_ITSBG: String,
+        var U_UTL_ST_ISSERVICE: String,
+        var UnitPrice: String,
+        var DiscountAmount: String,
+        var UnitWeight: String,
+        var UoMIds: String,
+        var UoS: String,
+        var UpdateDate: String,
+        var UpdateTime: String,
+        var UpdatedDate: String,
+        var UpdatedTime: String,
+        var PriceType: String,
+        var id: String
+    )
+}

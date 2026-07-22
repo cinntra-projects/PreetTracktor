@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#DCDCDC"
+    android:padding="6dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutFood"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_4"
+        android:layout_marginRight="@dimen/dimen_4"
+        android:background="@drawable/ex_concey_bg"
+        android:padding="15dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvFoodDate"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:alpha=".7"
+            android:background="@drawable/rounded_corner_4dp"
+            android:drawableEnd="@drawable/ic_calendar_icon"
+            android:drawablePadding="3dp"
+            android:drawableTint="@color/black_text_color"
+            android:gravity="center"
+            android:text="01 Aug"
+            android:textColor="@color/black_text_color"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent=".3" />
+
+        <EditText
+            android:id="@+id/etFoodLocation"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:background="@drawable/rounded_corner_4dp"
+            android:hint="Location"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/dimen_4"
+            android:textColor="@color/black_text_color"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvFoodDate"
+            app:layout_constraintTop_toBottomOf="@id/tvFoodDate" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinnerFood"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="4dp"
+            android:background="@drawable/rounded_corner_4dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/tvFoodDate"
+            app:layout_constraintEnd_toStartOf="@+id/layoutFoodAmount"
+            app:layout_constraintStart_toEndOf="@id/tvFoodDate"
+            app:layout_constraintTop_toTopOf="@id/tvFoodDate"
+            app:layout_constraintWidth_percent=".33" />
+
+        <EditText
+            android:id="@+id/etMeal"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_corner_4dp"
+            android:hint="Meal"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/dimen_4"
+            android:textColor="@color/black_text_color"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="@id/etFoodLocation"
+            app:layout_constraintStart_toStartOf="@id/etFoodLocation"
+            app:layout_constraintTop_toBottomOf="@id/etFoodLocation" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutFoodAmount"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:background="@drawable/rounded_corner_4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/spinnerFood"
+            app:layout_constraintTop_toTopOf="@id/tvFoodDate"
+            app:layout_constraintWidth_percent=".33">
+
+            <TextView
+                android:id="@+id/tvFoodRupee"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:gravity="center"
+                android:text="\u20B9"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent=".13" />
+
+            <View
+                android:id="@+id/viewFood"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintStart_toEndOf="@id/tvFoodRupee"></View>
+
+            <EditText
+                android:id="@+id/etFoodAmount"
+
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:background="#0000"
+                android:gravity="center_vertical"
+                android:hint="Amount"
+                android:maxLines="1"
+                android:inputType="number"
+                android:paddingLeft="8dp"
+                android:textColor="@color/black_text_color"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/viewFood"
+                app:layout_constraintTop_toTopOf="@id/viewFood" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/tvFoodCamera"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/ex_camera_border"
+            android:padding="3dp"
+            android:src="@drawable/camera_icon"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etMeal"
+            app:tint="#039E3A" />
+
+        <ImageView
+            android:id="@+id/ivDelete"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            android:padding="3dp"
+            android:src="@drawable/delete_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etMeal"
+            app:tint="@color/black_text_color" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

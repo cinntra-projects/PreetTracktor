@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1037420439902",
+    "project_id": "preettractor-a4ef5",
+    "storage_bucket": "preettractor-a4ef5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037420439902:android:d1aaab6bc02b9d98fa87cf",
+        "android_client_info": {
+          "package_name": "com.preetTractor.galaxyAndroid"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0NZyu4kuZCfCE-QqPgL5yjY2Yv-lBoLc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

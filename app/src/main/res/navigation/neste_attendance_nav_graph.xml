@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/neste_attendance_nav_graph.xml"
+    app:startDestination="@id/attendanceFragment">
+
+
+    <!--<fragment
+        android:id="@+id/attendanceBottomTabFragment"
+        android:name="preetTractor.galaxyAndroid.ui.fragment.AttendanceTabFragment"
+        android:label="fragment_attendance_tab"
+        tools:layout="@layout/fragment_attendance_tab" />-->
+    <fragment
+        android:id="@+id/attendanceFragment"
+        android:name="com.preetTractor.galaxyAndroid.ui.fragment.AttendanceFragment"
+        android:label="fragment_attendance"
+        tools:layout="@layout/fragment_attendance" />
+
+    <fragment
+        android:id="@+id/attendanceInnerFragment"
+        android:name="com.preetTractor.galaxyAndroid.ui.fragment.AttendanceInnerFragment"
+        android:label="AttendanceInnerFragment">
+        <argument
+            android:name="data"
+            app:argType="com.preetTractor.galaxyAndroid.data.DataOuterAttendanceListing" />
+    </fragment>
+    <fragment
+        android:id="@+id/leaveFragment"
+        android:name="com.preetTractor.galaxyAndroid.ui.fragment.LeaveFragment"
+        android:label="fragment_leave_fragment"
+        tools:layout="@layout/fragment_leave" />
+    <fragment
+        android:id="@+id/expensesFragment"
+        android:name="com.preetTractor.galaxyAndroid.ui.fragment.ExpenseFragment"
+        android:label="fragment_leave_expenses"
+        tools:layout="@layout/fragment_expense" />
+</navigation>

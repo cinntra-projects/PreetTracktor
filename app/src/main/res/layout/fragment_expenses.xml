@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.ExpensesFragment">
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="3dp"
+        android:drawableStart="@drawable/ic_calendar_icon"
+        android:drawablePadding="3dp"
+        android:gravity="center"
+        android:text="01 Aug 2021"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/expensesGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:foregroundGravity="center"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDate"
+        app:singleLine="true">
+
+        <RadioButton
+            android:id="@+id/chipLocal"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight=".7dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_expenses_chips"
+            android:button="@android:color/transparent"
+            android:checked="true"
+            android:gravity="center"
+            android:text="Local"
+            android:textColor="@color/chip_text_seletor" />
+
+        <RadioButton
+            android:id="@+id/chipTravelling"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1.1"
+            android:background="@drawable/selector_expenses_chips"
+            android:button="@android:color/transparent"
+            android:gravity="center"
+            android:text="Travelling"
+            android:textColor="@color/chip_text_seletor" />
+
+        <RadioButton
+            android:id="@+id/chipOutStation"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1.1"
+            android:background="@drawable/selector_expenses_chips"
+            android:button="@android:color/transparent"
+            android:gravity="center"
+            android:text="Outstation"
+            android:textColor="@color/chip_text_seletor" />
+
+        <RadioButton
+            android:id="@+id/chipMisc"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight=".7"
+            android:background="@drawable/selector_expenses_chips"
+            android:button="@android:color/transparent"
+            android:gravity="center"
+            android:text="Misc"
+            android:textColor="@color/chip_text_seletor" />
+
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/rgLeave"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        app:layout_constraintTop_toBottomOf="@+id/expensesGroup">
+
+        <RadioButton
+            android:id="@+id/allRB"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/leave_bg_selector"
+            android:button="@android:color/transparent"
+            android:checked="true"
+            android:gravity="center"
+            android:text="All"
+            android:textColor="@color/leavetext_seletor"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/pendingRB"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/leave_bg_selector"
+            android:button="@android:color/transparent"
+            android:checked="false"
+            android:gravity="center"
+            android:text="Pending"
+            android:textColor="@color/leavetext_seletor"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/approvedRB"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/leave_bg_selector"
+            android:button="@android:color/transparent"
+            android:checked="false"
+            android:gravity="center"
+            android:text="Approved"
+            android:textColor="@color/leavetext_seletor"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/rejecedRB"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/leave_bg_selector"
+            android:button="@android:color/transparent"
+            android:checked="false"
+            android:gravity="center"
+            android:text="Rejected"
+            android:textColor="@color/leavetext_seletor"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="+ Add"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:backgroundTint="@color/purple_700"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

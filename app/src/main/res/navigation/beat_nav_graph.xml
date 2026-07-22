@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentA">
+
+    <fragment
+        android:id="@+id/fragmentA"
+        android:name="com.preetTractor.galaxyAndroid.ui.fragment.BeatPlanFragment"
+        android:label="My Plan"
+        tools:layout="@layout/fragment_beat_plan">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentB"
+        android:name="com.preetTractor.galaxyAndroid.ui.fragment.AddNewBeatPlanFragment"
+        android:label="Add Plan"
+        tools:layout="@layout/add_new_beat_plan">
+
+    </fragment>
+
+
+</navigation>

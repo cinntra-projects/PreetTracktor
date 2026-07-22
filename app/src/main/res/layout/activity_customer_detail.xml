@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.customer.CustomerDetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapseToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:contentScrim="@color/white"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/colorPrimary"
+                    app:layout_collapseMode="pin"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <include
+                        android:id="@+id/includeLayout"
+                        layout="@layout/tool_bar_every_othr_screen"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.appcompat.widget.Toolbar>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/linearholderImage"
+                        android:layout_width="0dp"
+                        android:layout_height="130dp"
+                        android:layout_margin="@dimen/size_8"
+                        android:layout_weight="20"
+                        app:cardCornerRadius="@dimen/dimen_8"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:strokeColor="@color/grey"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/ivCategoryImage"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/image_customer_holder" />
+
+
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <LinearLayout
+                        android:id="@+id/linearCustomerName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/size_8"
+                        android:orientation="vertical"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/linearholderImage">
+
+                        <TextView
+                            android:id="@+id/tvCustomerName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="@color/black_text_color"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvCustomerAddress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textColor="@color/grey"
+                                android:textSize="16sp"
+
+                                />
+
+                            <ImageView
+                                android:id="@+id/ivInfo"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_marginStart="@dimen/size_8"
+                                android:src="@drawable/ic_info_blue"
+                                app:tint="@color/colorPrimary" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardMarkVisit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/size_8"
+                        android:layout_marginEnd="@dimen/size_8"
+                        app:cardCornerRadius="@dimen/dimen_8"
+                        app:layout_constraintBottom_toBottomOf="@+id/linearCustomerName"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/linearCustomerName"
+                        app:strokeColor="@color/grey"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearMarkVisit"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:paddingStart="@dimen/size_8"
+                            android:paddingTop="@dimen/dimen_4"
+                            android:paddingEnd="@dimen/size_8"
+                            android:paddingBottom="4dp">
+
+                            <ImageView
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_gravity="center"
+
+                                android:src="@drawable/ic_mark_visit" />
+
+                            <TextView
+                                android:id="@+id/tvBeatPlanVisitStatus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Mark Visit"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="16sp"
+
+                                />
+
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/viewSeparator"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="6dp"
+                        android:visibility="invisible"
+                        android:background="@color/dividerColor"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cardMarkVisit" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appbar">
+
+        <LinearLayout
+            android:id="@+id/linearOtherViews"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appbar">
+
+            <RadioGroup
+                android:id="@+id/tabs_strip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/strip_bg_white"
+                android:foregroundGravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewSeparator">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/tabNotes"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/tab_selector_in_customer"
+                    android:button="@android:color/transparent"
+                    android:checked="true"
+                    android:drawableTop="@drawable/note_selector"
+                    android:drawablePadding="@dimen/size_2"
+                    android:gravity="center"
+                    android:paddingVertical="@dimen/size_5"
+                    android:paddingTop="@dimen/dimen_4"
+                    android:visibility="gone"
+                    android:text="Notes"
+                    android:textColor="@drawable/text_color_selector"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/tabOrder"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/tab_selector_in_customer"
+                    android:button="@android:color/transparent"
+                    android:checked="false"
+                    android:drawableTop="@drawable/cart_selector"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/dimen_4"
+                    android:text="@string/order"
+                    android:textColor="@drawable/text_color_selector"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toEndOf="@+id/tabAttendence"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/tabBeatPlan"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/tab_selector_in_customer"
+                    android:button="@android:color/transparent"
+                    android:drawableTop="@drawable/overview_selector"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/dimen_4"
+                    android:text="@string/beat_plan"
+                    android:textColor="@drawable/text_color_selector"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:checked="true"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toEndOf="@+id/tabAttendence"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/tabOverView"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/tab_selector_in_customer"
+                    android:button="@android:color/transparent"
+                    android:drawableTop="@drawable/overview_selector"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/dimen_4"
+                    android:text="@string/overview"
+                    android:textColor="@drawable/text_color_selector"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toEndOf="@+id/tabAttendence"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/tabSecondary"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/tab_selector_in_customer"
+                    android:button="@android:color/transparent"
+                    android:drawableTop="@drawable/cart_selector"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/dimen_4"
+                    android:text="@string/secondary"
+                    android:textColor="@drawable/text_color_selector"
+                    android:textSize="14sp"
+                    android:visibility="gone"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/tabAttendence"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </RadioGroup>
+
+            <!-- Fragment Container -->
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragmentContainerCustomerActivity"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                />
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addNotes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:src="@drawable/ic_add"
+        app:elevation="@dimen/size_8"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/white" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,120 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/graph_size_350"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_gravity="center"
+    android:background="@drawable/rounded_corner">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:padding="16dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/size_8"
+        android:text="@string/billing"
+        android:textColor="@color/black_text_color" />
+
+    <AutoCompleteTextView
+        android:id="@+id/actvBilling"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner_4dp"
+        android:hint="0"
+        android:singleLine="true"
+        android:padding="@dimen/size_10"
+        android:inputType="number"
+        android:popupBackground="@drawable/dropdown_bg"
+        android:textSize="14sp" />
+
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/size_8"
+        android:text="@string/retail"
+            android:layout_marginTop="@dimen/size_10"
+        android:textColor="@color/black_text_color" />
+
+    <AutoCompleteTextView
+        android:id="@+id/actvRetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner_4dp"
+        android:hint="0"
+        android:inputType="number"
+        android:singleLine="true"
+        android:padding="@dimen/size_10"
+        android:popupBackground="@drawable/dropdown_bg"
+        android:textSize="14sp" />
+
+
+        <Button
+            android:id="@+id/btnDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_20"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/done"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:padding="16dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/size_8"
+        android:text="@string/delivery"
+        android:textColor="@color/black_text_color" />
+
+    <AutoCompleteTextView
+        android:id="@+id/actvDelivery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner_4dp"
+        android:hint="0"
+        android:inputType="number"
+        android:singleLine="true"
+        android:popupBackground="@drawable/dropdown_bg"
+        android:padding="@dimen/size_10"
+        android:textSize="14sp" />
+
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/size_8"
+        android:text="@string/collection"
+        android:layout_marginTop="@dimen/size_10"
+        android:textColor="@color/black_text_color" />
+
+    <AutoCompleteTextView
+        android:id="@+id/actvCollection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner_4dp"
+        android:hint="0"
+        android:inputType="number"
+        android:singleLine="true"
+        android:popupBackground="@drawable/dropdown_bg"
+        android:padding="@dimen/size_10"
+        android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_20"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:backgroundTint="@color/red"
+            android:text="@string/cancel"/>
+    </LinearLayout>
+
+</LinearLayout>

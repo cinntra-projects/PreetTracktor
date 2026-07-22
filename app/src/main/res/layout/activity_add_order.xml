@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.orderUi.activity.AddOrderActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/ivBackPress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/back_arrow"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_10"
+            android:fontFamily="@font/poppins_regular"
+            android:includeFontPadding="false"
+            android:text="Add Order"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_16" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintBottom_toTopOf="@+id/cvCartDetails">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_10"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/size_20"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Customer"
+                        android:textColor="@color/color_0B0B10"
+                        android:textSize="@dimen/text_size_12" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etCustomerName"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size_35"
+                        android:layout_marginTop="@dimen/size_2"
+                        android:background="@drawable/rounded_corner_4dp"
+                        android:hint="Enter customer"
+                        android:inputType="textEmailAddress"
+                        android:padding="@dimen/size_10"
+                        android:textSize="@dimen/text_size_12" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size_45"
+                        android:visibility="gone"
+                        android:hint="Select Customer">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/acCustomerAll"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/size_2"
+                        android:inputType="textAutoComplete"
+                        android:padding="@dimen/size_10"
+                        android:textSize="@dimen/text_size_14" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/size_20"
+                    android:layout_marginTop="@dimen/size_10"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Contact Number"
+                        android:textColor="@color/color_0B0B10"
+                        android:textSize="@dimen/text_size_12" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size_35"
+                        android:layout_marginTop="@dimen/size_2"
+                        android:background="@drawable/rounded_corner_4dp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvCountryCode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
+                            android:hint="+91 "
+                            android:paddingHorizontal="@dimen/size_8"
+                            android:paddingVertical="@dimen/size_8"
+                            android:textSize="@dimen/text_size_12" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etContactNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:fontFamily="@font/poppins_regular"
+                            android:hint="Enter mobile"
+                            android:includeFontPadding="false"
+                            android:inputType="number"
+                            android:paddingVertical="@dimen/size_10"
+                            android:textSize="@dimen/text_size_12" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/size_20"
+                    android:layout_marginTop="@dimen/size_10"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Email Id"
+                        android:textColor="@color/color_0B0B10"
+                        android:textSize="@dimen/text_size_12" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etEmailId"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size_35"
+                        android:layout_marginTop="@dimen/size_2"
+                        android:background="@drawable/rounded_corner_4dp"
+                        android:hint="Enter email Id"
+                        android:inputType="textEmailAddress"
+                        android:padding="@dimen/size_10"
+                        android:textSize="@dimen/text_size_12" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/size_20"
+                    android:layout_marginTop="@dimen/size_10"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Category"
+                        android:textColor="@color/color_0B0B10"
+                        android:textSize="@dimen/text_size_12" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size_40"
+                        android:hint="Select Category">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/acCategoryAll"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/size_2"
+                        android:padding="@dimen/size_10"
+                        android:textSize="@dimen/text_size_12" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/layoutItems"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginHorizontal="@dimen/size_20"
+                    android:layout_marginTop="@dimen/size_10"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Item Lists"
+                        android:textColor="@color/color_0B0B10"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size_35"
+                        android:layout_marginTop="@dimen/size_2"
+                        android:orientation="horizontal"
+                        android:background="@drawable/rounded_corner_4dp">
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etSearchItem"
+                            android:layout_width="@dimen/size_0"
+                            android:layout_height="match_parent"
+                            android:includeFontPadding="false"
+                            android:background="@null"
+                            android:textSize="@dimen/text_size_12"
+                            android:padding="@dimen/size_10"
+                            android:layout_weight="0.85"
+                            android:hint="Search"/>
+                        <View
+                            android:layout_width="@dimen/size_1"
+                            android:layout_height="match_parent"
+                            android:background="@color/grey"/>
+                        <ImageView
+                            android:layout_width="@dimen/size_0"
+                            android:layout_height="match_parent"
+                            android:padding="@dimen/size_6"
+                            android:layout_weight="0.15"
+                            android:src="@drawable/ic_search"/>
+                    </LinearLayout>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvItemOrder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible"
+                        android:layout_marginVertical="@dimen/size_10"
+                        tools:listitem="@layout/item_in_order_add"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvCartDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginHorizontal="@dimen/size_10"
+        app:cardCornerRadius="@dimen/size_10"
+        app:cardElevation="@dimen/size_4"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toTopOf="@id/layoutBottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/cartDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:paddingHorizontal="@dimen/size_10"
+                    android:text="Cart Item Details"
+                    android:textColor="@color/color_0B0B10"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivShowHideArrow"
+                    android:layout_width="@dimen/size_30"
+                    android:layout_height="@dimen/size_30"
+                    android:paddingHorizontal="@dimen/size_5"
+                    android:layout_marginEnd="@dimen/size_8"
+                    android:src="@drawable/ic_collapse"
+                    app:tint="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_1"
+                android:background="@color/devider_color_reports" />
+            <LinearLayout
+                android:id="@+id/layoutShowHide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/size_10"
+                    android:paddingBottom="@dimen/size_4">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:layout_weight="50"
+                        android:gravity="start"
+                        android:text="Base Amount"
+                        android:textColor="@color/black_text"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tvTotalBillingAmount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:layout_weight="50"
+                        android:gravity="end"
+                        android:text="0.00"
+                        android:textColor="@color/black_text"
+                        android:textSize="12sp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/size_10"
+                    android:paddingBottom="@dimen/size_4">
+
+                    <TextView
+                        android:id="@+id/tvItemDiscLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:layout_weight="50"
+                        android:gravity="start"
+                        android:text="Item Discount"
+                        android:textColor="@color/black_text"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tvItemDiscAmount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:layout_weight="50"
+                        android:gravity="end"
+                        android:text="0.00"
+                        android:textColor="@color/black_text"
+                        android:textSize="12sp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/size_10"
+                    android:paddingBottom="@dimen/size_4"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/tvHeaderDiscLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:layout_weight="50"
+                        android:gravity="start"
+                        android:text="Header Discount"
+                        android:textColor="@color/black_text"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tvHeaderDescAmount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:layout_weight="50"
+                        android:gravity="end"
+                        android:text="0.00"
+                        android:textColor="@color/black_text"
+                        android:textSize="12sp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/size_10"
+                    android:paddingBottom="@dimen/size_4">
+
+                    <TextView
+                        android:id="@+id/tvTaxRateLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:layout_weight="50"
+                        android:gravity="start"
+                        android:text="Tax Rate"
+                        android:textColor="@color/black_text"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tvTaxRateAmount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:layout_weight="50"
+                        android:gravity="end"
+                        android:text="0.00"
+                        android:textColor="@color/black_text"
+                        android:textSize="12sp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/size_10"
+                    android:paddingBottom="@dimen/size_4">
+
+                    <TextView
+                        android:id="@+id/tvFreightChargeLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:layout_weight="50"
+                        android:gravity="start"
+                        android:text="Freight Charges"
+                        android:textColor="@color/black_text"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tvFreightChargeAmount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:layout_weight="50"
+                        android:gravity="end"
+                        android:text="0.00"
+                        android:textColor="@color/black_text"
+                        android:textSize="12sp" />
+
+
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_1"
+                    android:background="@color/devider_color_reports" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/size_10"
+                android:paddingVertical="@dimen/size_6">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:layout_weight="50"
+                    android:gravity="start"
+                    android:text="Grand Total"
+                    android:textColor="@color/black_text"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/tvTotalInvoiceAmount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:layout_weight="50"
+                    android:gravity="end"
+                    android:text="0.00"
+                    android:textColor="@color/black_text"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <LinearLayout
+        android:id="@+id/layoutBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_light_grey"
+        android:paddingVertical="@dimen/size_8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <TextView
+            android:id="@+id/tvBtnPlaceOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/size_20"
+            android:text="Place Order"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_14"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center"
+            android:padding="@dimen/size_10"
+            android:background="@drawable/bg_button_blue_rounded"/>
+    </LinearLayout>
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/spinKitLoader"
+        style="@style/SpinKitView.Large.Circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:elevation="@dimen/dimen_8"
+        android:visibility="gone"
+        app:SpinKit_Color="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <LinearLayout
+        android:id="@+id/ivNoDataFound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <LinearLayout
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/white_bg_layout"
+            android:backgroundTint="@color/colorPrimary"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_gravity="center"
+                android:elevation="2dp"
+                android:padding="50dp"
+                android:src="@drawable/ic_bookmark_line"
+                app:tint="@color/white" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="No Data Found"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

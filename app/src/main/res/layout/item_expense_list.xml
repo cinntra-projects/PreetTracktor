@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="@dimen/dimen_4"
+    app:cardElevation="2dp"
+    app:strokeColor="@color/dividerColor"
+    app:strokeWidth="1dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minHeight="50dp"
+        android:padding="@dimen/dimen_4">
+
+        <TextView
+            android:id="@+id/ibArrowButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:drawableLeft="@drawable/right_sans_arrow_icon"
+            android:padding="@dimen/dimen_8"
+            android:text="Conveyance"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintExpandLayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:padding="@dimen/dimen_8"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@id/ibArrowButton"
+            app:layout_constraintTop_toTopOf="@id/ibArrowButton">
+
+            <TextView
+                android:id="@+id/tvTypeOfExpense"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="20"
+                android:gravity="start"
+                android:text="Conveyance"
+                android:textColor="@color/black_text_color"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tvDateExpand"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_weight="40"
+                android:gravity="start"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:text="01 Feb 2024"
+                android:textColor="#414141"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTypeOfExpense" />
+
+            <ImageView
+                android:id="@+id/ivLocation"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="5dp"
+                android:padding="2dp"
+                android:src="@drawable/ic_pin_expense"
+                app:layout_constraintStart_toEndOf="@+id/tvDateExpand"
+                app:layout_constraintTop_toTopOf="@+id/tvDateExpand" />
+
+            <TextView
+                android:id="@+id/tvLocationExpand"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_weight="60"
+                android:gravity="start"
+                android:maxLines="2"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:text="Noida Extension\n Delhi"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvMode"
+                app:layout_constraintStart_toEndOf="@+id/ivLocation"
+                app:layout_constraintTop_toTopOf="@+id/tvDateExpand" />
+
+
+            <TextView
+                android:id="@+id/lvlRemark"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="5dp"
+                android:layout_weight="40"
+                android:gravity="start"
+                android:text="Remarks: "
+                android:textColor="@color/black_text_color"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLocationExpand" />
+
+            <TextView
+                android:id="@+id/tvRemarks"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="8dp"
+                android:layout_weight="80"
+                android:gravity="start"
+                android:paddingRight="3dp"
+                android:textColor="@color/black_text_color"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/lvlAmount"
+                app:layout_constraintStart_toEndOf="@+id/lvlRemark"
+                app:layout_constraintTop_toTopOf="@+id/lvlRemark"
+                tools:text="Sorem Ipsum soreum ipseummsnis" />
+
+
+            <TextView
+                android:id="@+id/tvMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_weight="20"
+                android:gravity="start"
+                android:textColor="@color/black_text_color"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/tvDateExpand"
+                app:layout_constraintStart_toStartOf="@id/lvlAmount"
+                app:layout_constraintTop_toTopOf="@+id/tvDateExpand"
+                tools:text="Petrol" />
+
+
+            <TextView
+                android:id="@+id/lvlAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_weight="20"
+                android:gravity="start"
+                android:text="Amount: "
+                android:textColor="@color/black_text_color"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvAmount"
+                app:layout_constraintTop_toTopOf="@+id/tvAmount" />
+
+            <TextView
+                android:id="@+id/tvAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="8dp"
+                android:layout_weight="20"
+                android:gravity="start"
+                android:text="36500.00"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/viewExpand"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvMode" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="lvlAmount,tvRemarks" />
+
+            <View
+                android:id="@+id/viewExpand"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimen_8"
+                android:background="@color/dividerColor"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/barrier" />
+
+            <TextView
+                android:id="@+id/tvStatusRejectedExapand"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="30"
+                android:background="@drawable/drawable_expense_status_bacground"
+                android:backgroundTint="@color/pending_trancsleucent"
+                android:gravity="center"
+                android:text="Pending"
+                android:textColor="@color/pending"
+                android:textSize="14sp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/btnEdit"
+                app:layout_constraintEnd_toStartOf="@+id/btnEdit"
+                app:layout_constraintTop_toBottomOf="@id/viewExpand" />
+
+            <TextView
+                android:id="@+id/btnEdit"
+                android:layout_width="70dp"
+                android:layout_height="35dp"
+                android:background="@drawable/save_4dp"
+                android:drawableLeft="@drawable/edit_icon"
+                android:drawablePadding="3dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:text="  Edit"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewExpand" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/groupEdit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                app:constraint_referenced_ids="btnEdit,imageContainer,tvStatusRejectedExapand" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/imageContainer"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/dimen_8"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewExpand">
+
+                <ImageView
+                    android:id="@+id/ivChekcInImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/rounded_corner_4dp"
+                    android:src="@drawable/ic_image" />
+
+                <ImageView
+
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/close_circle_fill"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintExpandLayoutLodging"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="@dimen/dimen_8"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ibArrowButton"
+            app:layout_constraintTop_toBottomOf="@id/constraintExpandLayout">
+
+            <TextView
+                android:id="@+id/tvTypeOfExpenseLodging"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="20"
+                android:gravity="start"
+                android:text="Conveyance"
+                android:textColor="@color/black_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/linearExpandViewLodging"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_4"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tvTypeOfExpenseLodging"
+                app:layout_constraintTop_toBottomOf="@id/tvTypeOfExpenseLodging">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="70"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvDateExpandLodging"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="40"
+                            android:gravity="start"
+                            android:paddingStart="4dp"
+                            android:paddingEnd="4dp"
+                            android:text="01 Feb 2024"
+
+                            android:textColor="#414141"
+                            android:textSize="13sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvLocationExpandLodging"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_weight="60"
+                            android:drawableStart="@drawable/ic_pin_expense"
+                            android:gravity="start"
+                            android:text="Noida Extension"
+                            android:textColor="@color/black_text_color"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_weight="40"
+                            android:gravity="start"
+                            android:text="Remarks: "
+                            android:textColor="@color/black_text_color"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvRemarksLodging"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="80"
+                            android:gravity="start"
+                            android:text="Sorem Ipsum soreum ipseummsnis"
+
+                            android:textColor="@color/black_text_color"
+
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="50"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:id="@+id/tvModeLodging"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_weight="20"
+                            android:gravity="start"
+                            android:text="Petrol"
+
+
+                            android:textColor="@color/black_text_color"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_weight="20"
+                            android:gravity="start"
+                            android:text="Amount: "
+                            android:textColor="@color/black_text_color"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvAmountLodging"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="20"
+                            android:gravity="start"
+                            android:text="36500.00"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/viewExpandLodging"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimen_8"
+                android:background="@color/dividerColor"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/linearExpandViewLodging" />
+
+            <TextView
+                android:id="@+id/tvStatusRejectedExapandLodging"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="30"
+                android:background="@drawable/drawable_expense_status_bacground"
+                android:backgroundTint="@color/pending_trancsleucent"
+                android:gravity="center"
+                android:text="Pending"
+                android:textColor="@color/pending"
+                android:textSize="14sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/btnEditLodging"
+                app:layout_constraintEnd_toStartOf="@+id/btnEditLodging"
+                app:layout_constraintTop_toBottomOf="@id/viewExpandLodging" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEditLodging"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:icon="@drawable/edit_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewExpandLodging" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/dimen_8"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewExpandLodging">
+
+                <ImageView
+                    android:id="@+id/ivChekcInImageLodging"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/rounded_corner_4dp"
+                    android:src="@drawable/ic_image" />
+
+                <ImageView
+
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+
+                    android:src="@drawable/close_circle_fill"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintExpandLayoutFOOD"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="@dimen/dimen_8"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ibArrowButton"
+            app:layout_constraintTop_toBottomOf="@id/constraintExpandLayout">
+
+            <TextView
+                android:id="@+id/tvTypeOfExpenseFOOD"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="20"
+                android:gravity="start"
+                android:text="Conveyance"
+                android:textColor="@color/black_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/linearExpandViewFOOD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_4"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tvTypeOfExpenseFOOD"
+                app:layout_constraintTop_toBottomOf="@id/tvTypeOfExpenseFOOD">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="70"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvDateExpandFOOD"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="40"
+                            android:gravity="start"
+                            android:paddingStart="4dp"
+                            android:paddingEnd="4dp"
+                            android:text="01 Feb 2024"
+
+                            android:textColor="#414141"
+                            android:textSize="13sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvLocationExpandFOOD"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_weight="60"
+                            android:drawableStart="@drawable/ic_pin_expense"
+                            android:gravity="start"
+                            android:text="Noida Extension"
+                            android:textColor="@color/black_text_color"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_weight="40"
+                            android:gravity="start"
+                            android:text="Remarks: "
+                            android:textColor="@color/black_text_color"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvRemarksFOOD"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="80"
+                            android:gravity="start"
+                            android:text="Sorem Ipsum soreum ipseummsnis"
+
+                            android:textColor="@color/black_text_color"
+
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="50"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:id="@+id/tvModeFOOD"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_weight="20"
+                            android:gravity="start"
+                            android:text="Petrol"
+
+
+                            android:textColor="@color/black_text_color"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_weight="20"
+                            android:gravity="start"
+                            android:text="Amount: "
+                            android:textColor="@color/black_text_color"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvAmountFOOD"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="20"
+                            android:gravity="start"
+                            android:text="36500.00"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/viewExpandFOOD"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimen_8"
+                android:background="@color/dividerColor"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/linearExpandViewFOOD" />
+
+            <TextView
+                android:id="@+id/tvStatusRejectedExapandFOOD"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="30"
+                android:background="@drawable/drawable_expense_status_bacground"
+                android:backgroundTint="@color/pending_trancsleucent"
+                android:gravity="center"
+                android:text="Pending"
+                android:textColor="@color/pending"
+                android:textSize="14sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/btnEditFOOD"
+                app:layout_constraintEnd_toStartOf="@+id/btnEditFOOD"
+                app:layout_constraintTop_toBottomOf="@id/viewExpandFOOD" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEditFOOD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:icon="@drawable/edit_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewExpandFOOD" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/dimen_8"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewExpandFOOD">
+
+                <ImageView
+                    android:id="@+id/ivChekcInImageFOOD"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/rounded_corner_4dp"
+                    android:src="@drawable/ic_image" />
+
+                <ImageView
+
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+
+                    android:src="@drawable/close_circle_fill"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearCollapseViewHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_8"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/ibArrowButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="20"
+                android:gravity="start"
+                android:textColor="#414141"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent=".3"
+                tools:text="time" />
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/guideLine"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.56"
+                />
+            <TextView
+                android:id="@+id/tvTotalAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="#414141"
+                android:textSize="13sp"
+                android:layout_marginRight="2dp"
+                app:layout_constraintStart_toStartOf="@+id/guideLine"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="Amount:  " />
+            <TextView
+                android:id="@+id/tvTotalExpenseCollapse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvTotalAmount"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="3600" />
+
+            <TextView
+                android:id="@+id/tvStatusRejectedCollapse"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="30"
+                android:gravity="center"
+                android:drawableRight="@drawable/right_arrow_ic"
+                android:visibility="visible"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent=".1"
+                 />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

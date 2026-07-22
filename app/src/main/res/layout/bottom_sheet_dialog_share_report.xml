@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/headingBottomSheetShareReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:fontFamily="@font/inter_regular"
+        android:padding="@dimen/size_8"
+        android:text="@string/share_ledger_report"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/ivForword"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_redirect"
+        android:layout_marginEnd="@dimen/text_size_16"
+        app:layout_constraintTop_toTopOf="@id/headingBottomSheetShareReport"
+        app:layout_constraintBottom_toBottomOf="@id/headingBottomSheetShareReport"
+        app:layout_constraintEnd_toStartOf="@id/ivCloseBottomSheet"
+        app:tint="@color/black" />
+
+    <ImageView
+        android:id="@+id/ivCloseBottomSheet"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_cross"
+        android:layout_marginEnd="@dimen/size_8"
+        app:layout_constraintTop_toTopOf="@id/headingBottomSheetShareReport"
+        app:layout_constraintBottom_toBottomOf="@id/headingBottomSheetShareReport"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/black" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintWebViewHolder"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:background="@color/barchart_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headingBottomSheetShareReport">
+
+        <WebView
+            android:id="@+id/webViewBottomSheetDialog"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/headingShareVia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="@dimen/size_8"
+        android:fontFamily="@font/muli_bold"
+        android:text="@string/share_via"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraintWebViewHolder" />
+
+    <LinearLayout
+        android:id="@+id/linearWhatsappShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="16sp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/linearGmailShare"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headingShareVia">
+
+        <ImageView
+            android:layout_width="@dimen/size_40"
+            android:layout_height="@dimen/size_40"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_whatsapp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/muli_bold"
+            android:text="@string/whatsapp"
+            android:textSize="12sp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/constraintWebViewHolder" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearGmailShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/linearWhatsappShare"
+        app:layout_constraintEnd_toStartOf="@+id/linearOtherShare"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/linearWhatsappShare"
+
+        app:layout_constraintTop_toTopOf="@id/linearWhatsappShare">
+
+        <ImageView
+            android:layout_width="@dimen/size_40"
+            android:layout_height="@dimen/size_40"
+            android:layout_gravity="center"
+            android:src="@drawable/gmail_logopng" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/muli_bold"
+            android:text="Gmail"
+            android:textSize="12sp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/constraintWebViewHolder" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearOtherShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/linearGmailShare"
+        app:layout_constraintBottom_toBottomOf="@id/linearWhatsappShare"
+        app:layout_constraintTop_toTopOf="@id/linearWhatsappShare">
+
+        <ImageView
+            android:layout_width="@dimen/size_40"
+            android:layout_height="@dimen/size_40"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_more_dialog" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="More"
+            android:textSize="12sp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/constraintWebViewHolder" />
+
+
+    </LinearLayout>
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/loader"
+        android:visibility="gone"
+        style="@style/SpinKitView.Large.Circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_gravity="center"
+        app:SpinKit_Color="@color/colorPrimary" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

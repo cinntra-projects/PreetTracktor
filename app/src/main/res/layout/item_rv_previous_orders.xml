@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/size_8"
+    android:outlineSpotShadowColor="@color/gray1"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_order_item"
+        android:padding="@dimen/size_12">
+
+        <ImageView
+            android:id="@+id/ivNameIcon"
+            android:layout_width="@dimen/size_20"
+            android:layout_height="@dimen/size_20"
+            android:src="@drawable/ic_profile_latest"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_15"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Johnson Hills"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_14"
+            app:layout_constraintStart_toEndOf="@+id/ivNameIcon"
+            app:layout_constraintTop_toTopOf="@+id/ivNameIcon"
+            app:layout_constraintBottom_toBottomOf="@+id/ivNameIcon"/>
+
+        <ImageView
+            android:id="@+id/ivMobile"
+            android:layout_width="@dimen/size_15"
+            android:layout_height="@dimen/size_15"
+            android:layout_marginTop="@dimen/size_8"
+            android:src="@drawable/ic_phone_user_profile"
+            app:layout_constraintStart_toStartOf="@id/ivNameIcon"
+            app:layout_constraintTop_toBottomOf="@+id/ivNameIcon"/>
+
+        <TextView
+            android:id="@+id/tvMobileNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_marginStart="@dimen/size_20"
+            android:text="9540381085"
+            android:textColor="@color/gray1"
+            android:textSize="@dimen/text_size_12"
+            app:layout_constraintStart_toEndOf="@+id/ivMobile"
+            app:layout_constraintTop_toTopOf="@+id/ivMobile"
+            app:layout_constraintBottom_toBottomOf="@+id/ivMobile"/>
+
+        <ImageView
+            android:id="@+id/ivEmail"
+            android:layout_width="@dimen/size_15"
+            android:layout_height="@dimen/size_15"
+            android:layout_marginTop="@dimen/size_8"
+            android:src="@drawable/ic_user_mail_profile"
+            app:layout_constraintStart_toStartOf="@id/ivNameIcon"
+            app:layout_constraintTop_toBottomOf="@+id/ivMobile"/>
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_marginStart="@dimen/size_20"
+            android:text="abc@gmail.com"
+            android:textColor="@color/gray1"
+            android:textSize="@dimen/text_size_12"
+            app:layout_constraintStart_toEndOf="@+id/ivEmail"
+            app:layout_constraintTop_toTopOf="@+id/ivEmail"
+            app:layout_constraintBottom_toBottomOf="@+id/ivEmail"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

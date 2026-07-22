@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginTop="12dp"
+    android:background="@color/white"
+    android:elevation="4dp"
+    android:paddingVertical="4dp"
+    app:cardCornerRadius="8dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="4dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingHorizontal="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/prospect_name"
+                android:layout_weight="1"
+                android:layout_gravity="bottom"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_14" />
+
+            <ImageButton
+                android:id="@+id/ivRemoveCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:background="@android:color/transparent"
+                android:src="@drawable/close_circle_icon" />
+
+        </LinearLayout>
+
+
+        <AutoCompleteTextView
+            android:id="@+id/acProspectName"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/rounded_corner_4dp"
+            android:hint="Prospect Name"
+            android:inputType="textPersonName"
+            android:padding="@dimen/size_8"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="@dimen/size_4"
+            android:text="@string/prospect_number"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_14" />
+
+        <AutoCompleteTextView
+            android:id="@+id/atProspectNumber"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/rounded_corner_4dp"
+            android:hint="Mobile No."
+            android:inputType="number"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:padding="@dimen/size_8"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/headerSource"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_8"
+            android:fontFamily="@font/muli_regular"
+            android:text="@string/source"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_14" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp">
+
+                <AutoCompleteTextView
+                    android:id="@+id/searchableAutoCompleteSource"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_40"
+                    android:editable="false"
+                    android:maxLines="1"
+                    android:spinnerMode="dropdown"
+                    android:textSize="12sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/industry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/muli_regular"
+                    android:text="@string/industry"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_14" />
+
+               <!-- <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/searchableAutoCompleteIndustry"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/text_40"
+                            android:editable="false"
+                            android:maxLines="1"
+                            android:spinnerMode="dropdown"
+                            android:textSize="12sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </RelativeLayout>-->
+
+
+                <AutoCompleteTextView
+                    android:id="@+id/searchableAutoCompleteIndustry"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/rounded_corner_4dp"
+                    android:hint="Industry Name"
+                    android:inputType="textPersonName"
+                    android:padding="@dimen/size_8"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/headerZone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/muli_regular"
+                    android:text="@string/zone"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_14" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/searchableAutoCompleteZone"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/text_40"
+                            android:editable="false"
+                            android:maxLines="1"
+                            android:spinnerMode="dropdown"
+                            android:textSize="12sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- LinearLayout to hold Timing and Priority Spinners -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/timing_mand"
+                    android:textColor="@color/light_text_color"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/edtTiming"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/bg_edittext"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:hint="Timing"
+                    android:inputType="none"
+                    android:padding="8dp"
+                    android:textSize="12sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/priority_mand"
+                    android:textColor="@color/light_text_color"
+                    android:textSize="14sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:boxCornerRadiusBottomEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
+                        app:boxCornerRadiusTopStart="8dp">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/acPriorityList"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/text_40"
+                            android:editable="false"
+                            android:maxLines="1"
+                            android:spinnerMode="dropdown"
+                            android:textSize="12sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="4dp">
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mode_of_travel"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:textColor="@color/light_text_color"
+                    android:textSize="14sp" />
+
+
+            </LinearLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp">
+
+                <!-- AutoCompleteTextView for customer search -->
+                <AutoCompleteTextView
+                    android:id="@+id/acModeOfTravel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/mode_of_travel"
+                    android:singleLine="true"
+                    android:paddingStart="10dp"
+                    android:popupBackground="@drawable/dropdown_bg"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/remarks_mand"
+                android:textColor="@color/light_text_color"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/editTextRemark"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/bg_edittext"
+                android:hint="Remark"
+                android:padding="8dp"
+                android:textSize="12sp"
+                android:gravity="top|start"
+                android:inputType="textMultiLine"
+                android:maxLines="4"
+                android:minLines="3"
+                />
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/checkboxManager"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_40"
+            android:layout_marginTop="2dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/createLeadCheckBox"
+                android:layout_width="@dimen/size_25"
+                android:layout_height="@dimen/size_25"
+                android:layout_centerVertical="true"
+                android:buttonTint="@color/colorPrimary" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/size_5"
+                android:layout_toEndOf="@id/createLeadCheckBox"
+                android:fontFamily="@font/muli_regular"
+                android:text="@string/create_lead"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_14" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/rounded_border_media"
+                android:src="@drawable/ic_youtube_bg_image"
+                app:layout_constraintDimensionRatio="16:9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/ivIconPlay"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_youtube"
+                app:layout_constraintBottom_toBottomOf="@id/icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5" />
+
+
+            <TextView
+                android:id="@+id/tvVideoTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="New Year Party"
+                android:textColor="@color/black_text_color"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/icon" />
+
+
+            <TextView
+                android:id="@+id/tvVideoDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="ectetur adipiscing elit."
+                android:textColor="@color/black_text_color"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@id/linearShareButton"
+                app:layout_constraintStart_toStartOf="@id/tvVideoTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvVideoTitle" />
+
+
+            <LinearLayout
+                android:id="@+id/linearSizeFormat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tvVideoTitle"
+                app:layout_constraintTop_toBottomOf="@id/tvVideoDescription">
+
+                <TextView
+                    android:id="@+id/tvDocSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/size_65x68"
+                    android:textColor="@color/black_text_color"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@id/tvVideoTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvVideoTitle" />
+
+                <TextView
+                    android:id="@+id/tvDocFormat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_16"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/fromat_mp4"
+                    android:textColor="@color/black_text_color"
+                    android:textSize="12sp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/tvVideoTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvVideoTitle" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearShareButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_8"
+                android:background="@drawable/background_with_border_stroke"
+                android:backgroundTint="@color/colorPrimary"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/dimen_8"
+                android:paddingEnd="@dimen/dimen_8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvVideoTitle">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_share_video"
+                    app:layout_constraintBottom_toBottomOf="@id/icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5"
+                    app:tint="@color/white" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:padding="2dp"
+                    android:text="Share"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toBottomOf="@+id/icon" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

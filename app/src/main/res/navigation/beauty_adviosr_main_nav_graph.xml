@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph.xml"
+    app:startDestination="@id/dashboardBeautyAdvisorFragment">
+
+    <fragment
+        android:id="@+id/dashboardBeautyAdvisorFragment"
+        android:name="com.preetTractor.galaxyAndroid.ui.fragment.BeautyAdvisorDashboardFragment"
+        android:label="fragment_beauty_advisor_dashboard"
+        tools:layout="@layout/fragment_beauty_advisor_dashboard" />
+    <fragment
+        android:id="@+id/beautyAdvisorFragment"
+        android:name="com.preetTractor.galaxyAndroid.ui.fragment.BeautyAdvisorFragment"
+        android:label="fragment_teams"
+        tools:layout="@layout/fragment_teams" />
+    <fragment
+        android:id="@+id/attendanceBottomTabFragment"
+        android:name="com.preetTractor.galaxyAndroid.ui.fragment.AttendanceTabFragment"
+        android:label="fragment_attendance_tab"
+        tools:layout="@layout/fragment_attendance_tab" />
+
+</navigation>

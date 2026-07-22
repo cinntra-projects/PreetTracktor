@@ -1,0 +1,51 @@
+package com.preetTractor.galaxyAndroid.orderUi.model.response
+
+data class DataSoRequestAllFilter(
+    val AdditionalCharges: String,
+
+    val ApprovalStatus: String,
+    val ApproverId: String,
+    val CancelStatus: String,
+    val CardCode: String,
+    val CardName: String,
+    val Comments: String,
+    val ContactPersonCode: String,
+    val CreateDate: String,
+    val CreateTime: String,
+    val CreatedBy: String,
+    val CreationDate: String,
+    val DeliveryCharge: String,
+    val DeliveryMode: String,
+    val DeliveryTerm: String,
+    val DiscountPercent: String,
+    val DocCurrency: String,
+    val DocDate: String,
+    val DocDueDate: String,
+    val DocEntry: String,
+    val DocNum: String,
+    val DocTotal: String,
+
+    val DocumentStatus: String,
+    val FreeDelivery: String,
+    val Is_dms: String,
+    val Is_galaxy: String,
+    val Link: String,
+    val NetTotal: Double,
+
+    val PaymentType: String,
+
+    val TaxDate: String,
+    val TermCondition: String,
+    val TotalQuantity: Int,
+    val U_LAT: String,
+    val U_LONG: String,
+    val U_OPPID: String,
+    val U_OPPRNM: String,
+    val U_QUOTID: String,
+    val U_QUOTNM: String,
+    val Unit: String,
+    val UpdateDate: String,
+    val UpdateTime: String,
+    val VatSum: String,
+    val id: String
+)

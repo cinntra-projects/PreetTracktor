@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.orderUi.activity.ItemListFromSchemesActivity">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            app:cardElevation="6dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                android:paddingStart="@dimen/size_4"
+                android:paddingTop="8dp"
+                android:paddingEnd="@dimen/dimen_8"
+                android:paddingBottom="8dp">
+
+
+                <!-- Logo Icon -->
+                <ImageView
+                    android:id="@+id/ivLogoIcon"
+                    android:layout_width="60dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/cinntra_logo"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5" />
+
+                <!-- Title -->
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Profile"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:visibility="visible"
+
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/ivCollapseCart"
+                    app:layout_constraintStart_toStartOf="@+id/ivLogoIcon"
+                    app:layout_constraintTop_toBottomOf="@+id/ivLogoIcon" />
+
+                <!-- Notification Button -->
+                <ImageButton
+                    android:id="@+id/ibNotify"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:visibility="gone"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:src="@drawable/ic_notification"
+                    app:layout_constraintBottom_toBottomOf="@id/profile_icon"
+                    app:layout_constraintEnd_toStartOf="@+id/profile_icon"
+                    app:layout_constraintTop_toTopOf="@id/profile_icon"
+                    app:tint="@color/white" />
+
+                <!-- Cart Button -->
+                <ImageView
+                    android:id="@+id/ivCollapseCart"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_shop"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@id/profile_icon"
+                    app:layout_constraintEnd_toStartOf="@+id/ibNotify"
+                    app:layout_constraintTop_toTopOf="@id/profile_icon"
+                    app:tint="@color/white" />
+
+                <!-- Cart Counter -->
+                <TextView
+                    android:id="@+id/tvCartCounter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:background="@drawable/background_round_corners_red"
+                    android:gravity="center"
+                    android:paddingStart="4dp"
+                    android:paddingTop="2dp"
+                    android:visibility="visible"
+                    android:paddingEnd="4dp"
+                    android:paddingBottom="2dp"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="8sp"
+                    app:layout_constraintEnd_toEndOf="@id/ivCollapseCart"
+                    app:layout_constraintStart_toStartOf="@id/ivCollapseCart"
+                    app:layout_constraintTop_toTopOf="@id/ivCollapseCart" />
+
+                <!-- Profile Icon -->
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_icon"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="5dp"
+                    android:visibility="gone"
+                    android:background="@drawable/imageview_background"
+                    android:src="@drawable/deafult_image"
+
+                    app:civ_border_color="@color/colorPrimary"
+                    app:civ_border_width="2dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ibBack"
+            android:src="@drawable/ic_arrow_back_white_24"
+            android:backgroundTint="@color/white"
+            android:layout_margin="@dimen/size_8"
+            app:layout_constraintTop_toBottomOf="@id/cardToolBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tint="@color/black_text" />
+
+        <LinearLayout
+            android:id="@+id/linearSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/size_8"
+            android:background="@drawable/rounded_corner_stroke_colored"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ibBack"
+            app:layout_constraintTop_toBottomOf="@id/cardToolBar"
+
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="90">
+
+                <TextView
+
+                    android:id="@+id/edtSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+
+                    android:backgroundTint="@android:color/transparent"
+                    android:fontFamily="@font/inter_regular"
+
+                    android:singleLine="true"
+                    android:text="  Search For "
+                    android:textSize="@dimen/text_size_12"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5" />
+
+                <TextView
+                    android:id="@+id/tvSearchDoc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="89"
+
+                    android:backgroundTint="@android:color/transparent"
+                    android:fontFamily="@font/inter_regular"
+
+                    android:gravity="start"
+                    android:singleLine="true"
+                    android:text="Anything"
+                    android:textColor="@color/black_text"
+                    android:textSize="@dimen/text_size_12"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+
+                    app:layout_constraintStart_toEndOf="@id/edtSearch"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <ImageButton
+                android:id="@+id/ibSearch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_8"
+                android:layout_weight="10"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/ic_search"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/btnProceedToBuy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearSearch">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <include layout="@layout/item_pending_by_order_shimmer"/>
+                <include layout="@layout/item_pending_by_order_shimmer"/>
+                <include layout="@layout/item_pending_by_order_shimmer"/>
+                <include layout="@layout/item_pending_by_order_shimmer"/>
+                <include layout="@layout/item_pending_by_order_shimmer"/>
+                <include layout="@layout/item_pending_by_order_shimmer"/>
+                <include layout="@layout/item_pending_by_order_shimmer"/>
+                <include layout="@layout/item_pending_by_order_shimmer"/>
+                <include layout="@layout/item_pending_by_order_shimmer"/>
+                <include layout="@layout/item_pending_by_order_shimmer"/>
+                <include layout="@layout/item_pending_by_order_shimmer"/>
+                <include layout="@layout/item_pending_by_order_shimmer"/>
+                <include layout="@layout/item_pending_by_order_shimmer"/>
+                <include layout="@layout/item_pending_by_order_shimmer"/>
+                <include layout="@layout/item_pending_by_order_shimmer"/>
+                <include layout="@layout/item_pending_by_order_shimmer"/>
+                <include layout="@layout/item_pending_by_order_shimmer"/>
+                <include layout="@layout/item_pending_by_order_shimmer"/>
+                <include layout="@layout/item_pending_by_order_shimmer"/>
+                <include layout="@layout/item_pending_by_order_shimmer"/>
+                <include layout="@layout/item_pending_by_order_shimmer"/>
+                <include layout="@layout/item_pending_by_order_shimmer"/>
+
+
+            </LinearLayout>
+
+
+
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvDispatchOrder"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/btnProceedToBuy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearSearch"
+            tools:listitem="@layout/item_dispatch_order" />
+
+        <Button
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            android:id="@+id/btnProceedToBuy"
+            android:text="Proceed To Buy"
+            android:textAllCaps="false"
+            android:textSize="@dimen/text_size_14"
+            android:background="@drawable/background_with_border_stroke_item"
+            android:layout_marginBottom="@dimen/dimen_8"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/spinKitLoader"
+            style="@style/SpinKitView.Large.Circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:elevation="@dimen/dimen_8"
+            app:SpinKit_Color="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

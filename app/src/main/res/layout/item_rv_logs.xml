@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/size_8"
+    android:outlineSpotShadowColor="@color/gray1"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_order_item"
+        android:padding="@dimen/size_12">
+
+        <ImageView
+            android:id="@+id/ivNameIcon"
+            android:layout_width="@dimen/size_20"
+            android:layout_height="@dimen/size_20"
+            android:src="@drawable/ic_profile_latest"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvBpName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_15"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Johnson Hills"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_14"
+            app:layout_constraintStart_toEndOf="@+id/ivNameIcon"
+            app:layout_constraintTop_toTopOf="@+id/ivNameIcon"
+            app:layout_constraintBottom_toBottomOf="@+id/ivNameIcon"/>
+
+
+        <TextView
+            android:id="@+id/tvSalesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_10"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Sales: "
+            android:textColor="@color/gray1"
+            android:textSize="@dimen/text_size_12"
+            app:layout_constraintStart_toStartOf="@+id/ivNameIcon"
+            app:layout_constraintTop_toBottomOf="@+id/ivNameIcon"
+            />
+
+        <TextView
+            android:id="@+id/tvTotalSalePrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:drawableStart="@drawable/ic_rupee_symbol"
+            android:drawablePadding="@dimen/size_2"
+            android:text="20,000"
+            android:textStyle="bold"
+            android:textColor="@color/color_0B0B10"
+            android:textSize="@dimen/text_size_14"
+            app:layout_constraintStart_toEndOf="@+id/tvSalesLabel"
+            app:layout_constraintTop_toTopOf="@+id/tvSalesLabel"
+            app:layout_constraintBottom_toBottomOf="@id/tvSalesLabel"
+            />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:visibility="gone"
+            android:text="22/10/2024"
+            android:textColor="@color/color_0B0B10"
+            android:textSize="@dimen/text_size_14"
+
+            app:layout_constraintBottom_toBottomOf="@+id/tvBpName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvBpName" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

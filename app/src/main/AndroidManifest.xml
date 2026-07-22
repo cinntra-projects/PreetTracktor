@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
+    <application
+        android:name=".BaseApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/config"
+        android:requestLegacyExternalStorage="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="fullSensor"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.KotlinFlows"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:label, android:theme, android:icon"
+        tools:targetApi="31">
+        <service
+            android:name=".MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".ui.activity.AddLeadBeatPlanActivity"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.LeadsActivity"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.AddNonCustomerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.AddLead"
+            android:theme="@style/FullScreenMateial"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.customermodule.CustomerActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.customermodule.AddBPCustomer"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenMateial" />
+        <activity
+            android:name=".ui.orderUi.activity.OrderDetailsActivity"
+            android:exported="false"
+            android:theme="@style/FullScreenMateial" />
+        <activity
+            android:name=".ui.activity.log.LogsActivity"
+            android:exported="false"
+            android:theme="@style/FullScreenMateial" />
+        <activity
+            android:name=".ui.orderUi.activity.AddOrderActivity"
+            android:exported="false"
+            android:theme="@style/FullScreenMateial" />
+        <activity
+            android:name=".ui.orderUi.activity.PreviousOrderDetailsActivity"
+            android:exported="false"
+            android:theme="@style/FullScreenMateial" />
+        <activity
+            android:name=".ui.activity.BeatPlanActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.VisitBeatPlanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.ProfileActivity"
+            android:exported="false"
+            android:theme="@style/FullScreenMateial" />
+        <activity
+            android:name=".ui.activity.customer.CustomerProfileAndOutletPicActivity"
+            android:exported="false"
+            android:theme="@style/FullScreenMateial" />
+        <activity
+            android:name=".ui.orderUi.activity.PendingOrderWiseActivity"
+            android:exported="false"
+            android:theme="@style/FullScreenMateial" />
+        <activity
+            android:name=".ui.orderUi.activity.SubCategoryListActivity"
+            android:exported="false"
+            android:theme="@style/FullScreenMateial" />
+        <activity
+            android:name=".searchUi.ui.activity.SearchActivity"
+            android:exported="false"
+            android:theme="@style/FullScreenMateial" />
+        <activity
+            android:name=".ui.orderUi.activity.UpdateCartActivity"
+            android:exported="false"
+            android:theme="@style/FullScreenMateial" />
+        <activity
+            android:name=".ui.orderUi.activity.OrderUnderApprovalOneDetailActivity"
+            android:exported="false"
+            android:theme="@style/FullScreenMateial" />
+        <activity
+            android:name=".ui.orderUi.activity.OrderUnderApprovalActivity"
+            android:exported="false"
+            android:theme="@style/FullScreenMateial" />
+        <activity
+            android:name=".ui.orderUi.activity.ItemOneActivity"
+            android:exported="false"
+            android:theme="@style/FullScreenMateial" />
+        <activity
+            android:name=".ui.orderUi.activity.CartActivity"
+            android:exported="false"
+            android:theme="@style/FullScreenMateial" />
+        <activity
+            android:name=".ui.orderUi.activity.ItemListFromSubCategoryOrderRequestActivity"
+            android:exported="false"
+            android:theme="@style/FullScreenMateial" />
+        <activity
+            android:name=".ui.orderUi.activity.ItemListFromSchemesActivity"
+            android:exported="false"
+            android:theme="@style/FullScreenMateial" />
+        <activity
+            android:name=".ui.activity.customer.CustomerDetailActivity"
+            android:exported="false"
+            android:theme="@style/FullScreenMateial"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.activity.test.TestHerarchyActivity"
+            android:exported="false"
+            android:theme="@style/FullScreenMateial" />
+        <activity
+            android:name=".ui.activity.otpAndMpinScreen.ForgotMPINActivity"
+            android:exported="false"
+            android:theme="@style/FullScreenMateial" />
+        <activity
+            android:name=".demo.ExpendableListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.AttendanceActivity"
+            android:exported="false"
+            android:theme="@style/FullScreenMateial" />
+        <activity
+            android:name=".ui.activity.beat.BeatPlanApprovalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.BeatPlanActivity"
+            android:exported="false"
+            android:theme="@style/FullScreenMateial" />
+        <activity
+            android:name=".ui.activity.LeaveActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.UserScreenActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.beat.AddBeatPlanActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.splashScreen.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenMateial">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.activity.MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.addExpenses.AddExpenseActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenMateial"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.activity.SchemeOneActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenMateial"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.activity.ActivitySignIn"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenMateial" />
+        <activity
+            android:name=".ui.activity.ExpenseRequestActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.otpAndMpinScreen.MPINActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenMateial" />
+        <activity
+            android:name=".ui.activity.otpAndMpinScreen.OtpActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenMateial" />
+        <activity
+            android:name=".ui.activity.otpAndMpinScreen.TermsConditionInSIgnInActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenMateial" />
+        <activity
+            android:name=".ui.activity.otpAndMpinScreen.VerifyMPINOtpActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenMateial" />
+        <activity
+            android:name=".ui.activity.otpAndMpinScreen.UpdateMPINActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenMateial" />
+        <activity
+            android:name=".ui.activity.AttendanceBackGroundListActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".helper.LocationService"
+            android:exported="false"
+            android:foregroundServiceType="location" />
+        <receiver
+            android:name=".helper.BootLocationReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+        <!--
+         <provider
+                    android:name="androidx.core.content.FileProvider"
+                    android:authorities="${applicationId}.fileprovider"
+                    android:exported="false"
+                    android:grantUriPermissions="true">
+                    <meta-data
+                        android:name="android.support.FILE_PROVIDER_PATHS"
+                        android:resource="@xml/provider_paths" />
+                </provider>
+                 -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.preetTractor.galaxyAndroid.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"
+                tools:replace="android:resource" />
+        </provider>
+        <activity
+            android:name=".ui.mediaUi.activity.PdfViewActivity"
+            android:exported="false"
+            android:theme="@style/FullScreenMateial" />
+    </application>
+</manifest>

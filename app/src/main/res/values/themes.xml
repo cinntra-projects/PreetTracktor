@@ -1,0 +1,209 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="Theme.KotlinFlows" parent="Theme.Material3.DayNight">
+
+        <!-- Primary colors -->
+        <item name="colorPrimary">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Secondary colors -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <!-- Status bar -->
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
+
+        <!-- Navigation bar -->
+        <item name="android:navigationBarColor">?attr/colorSurface</item>
+
+        <!-- Material3 -->
+        <item name="materialButtonStyle">@style/Widget.Material3.Button</item>
+        <item name="toolbarStyle">@style/Widget.Material3.Toolbar</item>
+        <item name="actionBarStyle">@style/ToolbarbarHeadingSmall</item>
+    </style>
+
+    <style name="ToolbarbarHeadingSmall" parent="@style/Widget.AppCompat.ActionBar">
+        <item name="titleTextStyle">@style/MyActionBarTitle</item>
+    </style>
+
+    <style name="MyActionBarTitle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">@dimen/text_size_18</item>
+    </style>
+    <!-- KEEPING SAME NAME -->
+    <style name="Theme.KotlinFlows.NoActionBar" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
+    <style name="radionbutton" parent="Base.Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:button">@android:color/transparent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@drawable/selector_expenses_chips</item>
+    </style>
+
+
+    <style name="CustomAlertDialog" parent="Theme.Material3.Light.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/rounded_corner_mpin_4dp</item>
+    </style>
+
+
+    <style name="CustomTabTextStyle" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="textAllCaps">false</item>
+    </style>
+
+
+    <style name="customExtendedFAB">
+
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+
+    </style>
+
+
+    <style name="ChipTextAppearance" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+
+    <style name="customNormalFAB">
+
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="width">86dp</item>
+
+    </style>
+
+
+    <style name="textview_with_font" parent="Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+
+    <!-- KEEPING SAME NAME -->
+    <style name="FullScreenMateial" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">false</item>
+
+        <item name="android:windowContentOverlay">@null</item>
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorSecondary">@color/colorPrimary</item>
+
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+
+    </style>
+
+
+    <style name="Theme.KotlinFlows.AppBarOverlay"
+        parent="ThemeOverlay.Material3.Dark.ActionBar" />
+
+    <style name="Theme.KotlinFlows.PopupOverlay"
+        parent="ThemeOverlay.Material3.Light" />
+
+
+    <style name="AppModalStyle" parent="Widget.Material3.BottomSheet.Modal">
+        <item name="android:background">@drawable/rounded_dialog</item>
+    </style>
+
+
+    <!-- KEEPING SAME NAME -->
+    <style name="BottomSheetDialogTheme"
+        parent="Theme.Material3.Light.BottomSheetDialog">
+
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+
+    </style>
+
+
+    <!-- KEEPING SAME NAME -->
+    <style name="BottomSheetStyle"
+        parent="Widget.Material3.BottomSheet.Modal">
+
+        <item name="android:background">@android:color/transparent</item>
+
+    </style>
+
+
+    <style name="DialogStyle"
+        parent="Theme.Material3.Light.BottomSheetDialog">
+
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+
+    </style>
+
+
+    <style name="CustomTabText" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/black_text_color</item>
+    </style>
+
+
+    <!-- KEEPING SAME STYLE NAME -->
+    <style name="Widget.MaterialComponents.Button.Filled"
+        parent="Widget.Material3.Button">
+
+        <item name="backgroundTint">@color/purple_700</item>
+        <item name="android:textColor">@color/white</item>
+
+    </style>
+
+
+    <!-- KEEPING SAME STYLE NAME -->
+    <style name="Widget.MaterialComponents.Button.Outlined"
+        parent="Widget.Material3.Button.OutlinedButton">
+
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="strokeColor">@color/purple_700</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="android:textColor">@color/grey</item>
+
+    </style>
+    <style name="BottomDiaologTitleStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black_text</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="fontFamily">@font/muli_bold</item>
+        <item name="android:background">@drawable/rounded_corner</item>
+    </style>
+
+    <style name="ButtonDialogButtonText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black_text</item>
+        <item name="android:textAlignment">center</item>
+        <item name="fontFamily">@font/muli_bold</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+    <style name="BottomDialogButtonsSeparator">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">#BABAB8</item>
+    </style>
+</resources>

@@ -1,0 +1,58 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/size_8"
+    android:orientation="vertical"
+
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/size_8"
+        android:text="@string/select_state"
+        android:textColor="@color/black_text_color" />
+
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextViewState"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner_4dp"
+        android:hint="Select State"
+        android:drawableTint="@color/grey"
+        android:drawableEnd="@drawable/arrow_drop_down_line_icon"
+        android:singleLine="true"
+        android:padding="@dimen/size_10"
+        android:popupBackground="@drawable/dropdown_bg"
+        android:textSize="14sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="@dimen/size_8"
+        android:text="@string/select_city"
+        android:textColor="@color/black_text_color" />
+
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextViewCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_corner_4dp"
+        android:hint="Select City"
+        android:drawableEnd="@drawable/arrow_drop_down_line_icon"
+        android:drawableTint="@color/grey"
+        android:singleLine="true"
+        android:popupBackground="@drawable/dropdown_bg"
+        android:padding="@dimen/size_10"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/applyButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_corner_4dp"
+        android:text="Apply" />
+</LinearLayout>

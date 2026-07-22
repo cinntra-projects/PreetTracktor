@@ -1,0 +1,50 @@
+package com.preetTractor.galaxyAndroid.orderUi.model.local
+
+data class LocalDataForCart(
+   /* var ItemCode: String="",
+    var ItemDescription: String="",
+    var UnitPrice: String="",
+    var PriceType: String="",
+    var SalesQtyPerPackUnit: String="",
+    var id: String="",
+
+    var U_UTL_SD : String = "",
+    var Currency : String = "INR",
+    var TaxCode : String = "IGST18",
+    var UnitPriceown : String = "",
+    var U_UTL_TD : String = "",
+    var DiscountPercent : String = "",
+    var ProjectCode : String = "",
+    var FreeText : String = "",
+    var UomNo : String = "",
+    var UoMCode : String = "",
+    var Image : String = "",
+    var UnitWeight : String = "",
+    var U_UTL_DD : String = "",
+    var OrderID : String = "",
+    var Quantity : Int = -1,*/
+   var id: String="",
+   var OrderID:String,
+//   var SalesQtyPerPackUnit: String,
+   var ItemCode: String,
+   var ItemDescription: String,
+   var UnitPrice: Int,
+//   var PriceType: String,
+   var U_UTL_SD: String,
+   var Currency: String,
+   var TaxCode: String,
+   var UnitPriceown: Int,
+   var U_UTL_TD: String,
+   var DiscountPercent: Int,
+   var ProjectCode: String,
+   var FreeText: String,
+   var UomNo: Int,
+   var UoMCode: String,
+   var Image: String,
+//   var UnitWeight: String,
+   var U_UTL_DD: String,
+   var Quantity: Int,
+   var TaxRate: Double
+
+
+)

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ========================= -->
+    <!-- PRIMARY BRAND COLORS -->
+    <!-- ========================= -->
+
+<!--    <color name="colorPrimary">#0B57D0</color>-->
+    <color name="colorPrimary">#003C8F</color>
+    <color name="purple_200">#82B1FF</color>
+    <color name="purple_500">#0B57D0</color>
+    <color name="purple_700">#003C8F</color>
+    <color name="purple_760">#E3F2FD</color>
+
+    <!-- ========================= -->
+    <!-- SECONDARY COLORS -->
+    <!-- ========================= -->
+
+    <color name="teal_200">#03DAC5</color>
+    <color name="teal_700">#018786</color>
+    <color name="aqua_200">#B2DFDB</color>
+
+    <!-- ========================= -->
+    <!-- BACKGROUND / SURFACE -->
+    <!-- ========================= -->
+
+    <color name="white">#FFFFFF</color>
+    <color name="white_smoke">#F8F9FA</color>
+    <color name="lightGrey">#F5F5F5</color>
+    <color name="lightGrey1">#EAEAEA</color>
+    <color name="dividerColor">#EEEEEE</color>
+    <color name="table_header_color">#F4F4F4</color>
+    <color name="table_header_stroke_color">#E0E0E0</color>
+    <color name="tab_background_color">#F1F3F4</color>
+    <color name="devider_color_reports">#ECECEC</color>
+
+    <!-- ========================= -->
+    <!-- TEXT COLORS -->
+    <!-- ========================= -->
+
+    <color name="black">#000000</color>
+    <color name="black_text">#1C1C1E</color>
+    <color name="black_text_color">#414141</color>
+    <color name="light_text_color">#6B7280</color>
+    <color name="gray1">#616161</color>
+    <color name="grey_heading">#9E9E9E</color>
+
+    <!-- ========================= -->
+    <!-- STATUS COLORS -->
+    <!-- ========================= -->
+
+    <color name="green_approved">#22C55E</color>
+    <color name="green_profile_background">#DCFCE7</color>
+    <color name="green_transcluecent_color">#3322C55E</color>
+
+    <color name="red">#EF4444</color>
+    <color name="red_700">#FEE2E2</color>
+    <color name="red_reject_text">#DC2626</color>
+    <color name="red_rejected">#FF4E8A</color>
+    <color name="red_rejected_transluecent_color">#22FF4E8A</color>
+
+    <color name="pending">#2196F3</color>
+    <color name="pending_text_color">#03A9F4</color>
+    <color name="pending_trancsleucent">#332196F3</color>
+
+    <color name="orange_color">#FB8C00</color>
+    <color name="yellow">#FDD835</color>
+
+    <!-- ========================= -->
+    <!-- EXTRA UI COLORS -->
+    <!-- ========================= -->
+
+    <color name="blue">#2196F3</color>
+    <color name="horizontal_sky_border">#0B57D0</color>
+    <color name="color_0B0B10">#0B0B10</color>
+    <color name="safron_barChart">#FFA63D</color>
+
+    <color name="offline_grey">#BDBDBD</color>
+    <color name="icon_color_default">#9CA3AF</color>
+    <color name="light_grey_box">#D6D6D6</color>
+    <color name="barchart_line">#D8D8D8</color>
+    <color name="gray_60">#99A4A4A4</color>
+    <color name="shimmer_color">#D1D5DB</color>
+    <color name="lavendar_color">#7C3AED</color>
+
+    <!-- ========================= -->
+    <!-- TRANSPARENT -->
+    <!-- ========================= -->
+
+    <color name="transparent">@android:color/transparent</color>
+
+</resources>

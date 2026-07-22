@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/date_layout"
+            android:layout_width="match_parent"
+            android:padding="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/round"
+                android:backgroundTint="@color/lightGrey"
+                android:drawableLeft="@drawable/ic_calendar_icon"
+                android:drawablePadding="5dp"
+                android:drawableTint="@color/colorPrimary"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:text="03/09/2024"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_14"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/beatplanHolder"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/date_layout"
+        android:paddingBottom="80dp"
+        android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/first_beat_plan"
+                layout="@layout/item_add_beat_plan"
+                android:layout_width="match_parent"
+                android:layout_margin="8dp"
+                android:layout_height="0dp"/>
+
+            <LinearLayout
+                app:layout_constraintTop_toBottomOf="@id/first_beat_plan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/plan_container"/>
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/add_new"
+                android:text="@string/add"
+                android:drawableLeft="@drawable/ic_add"
+                android:background="@drawable/rounded_corner_stroke_colored"
+                android:backgroundTint="@color/colorPrimary"
+                android:textAllCaps="false"
+                android:layout_margin="15dp"
+                android:drawableTint="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/plan_container"
+                app:layout_constraintEnd_toEndOf="parent"/></androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/save"
+        android:text="Save"
+        android:enabled="false"
+        android:textSize="@dimen/text_size_16"
+        android:background="@drawable/button_rounded_corner"
+        android:backgroundTint="@color/colorPrimary"
+        android:textAllCaps="false"
+        android:layout_margin="15dp"
+        android:drawableTint="@color/white"
+       app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

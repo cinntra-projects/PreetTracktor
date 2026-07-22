@@ -1,0 +1,32 @@
+package com.preetTractor.galaxyAndroid.ui.activity.customermodule.model
+
+data class SalesEmployee(
+    val id: Int,
+    val roleName: String,
+    val companyID: String,
+    val salesEmployeeCode: String,
+    val salesEmployeeName: String,
+    val employeeID: String,
+    val userName: String,
+    val firstName: String,
+    val middleName: String?,
+    val lastName: String,
+    val email: String,
+    val mobile: String,
+    val position: String,
+    val branch: String,
+    val passwordUpdatedOn: String?,
+    val lastLoginOn: String?,
+    val logedIn: String?,
+    val fcm: String?,
+    val active: String,
+    val timestamp: String,
+    val reportingTo: String,
+    val userId: String,
+    val clientId: String,
+    val isGalaxyUser: String,
+    val vehicle: String?,
+    val role: Int,
+    val departement: Int,
+    val zone: List<Int>
+)
