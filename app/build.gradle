@@ -32,8 +32,29 @@ android {
         minSdk 24
         targetSdk 34
 
-        versionCode 3
-        versionName "3.0"
+        versionCode 5
+        versionName "5.0.1"
+    }
+
+    // =====================================================
+    // SIGNING CONFIGS
+    // =====================================================
+
+    signingConfigs {
+
+        debug {
+            // Shared, repo-committed debug keystore so every machine/CI signs debug builds
+            // identically. Without this, Gradle falls back to each machine's own
+            // ~/.android/debug.keystore, so an APK built on one machine has a different
+            // signature than one built on another. Installing a differently-signed APK over
+            // an existing install of the same applicationId fails with a bare
+            // "App not installed" (signature mismatch), which is what was happening on
+            // devices that already had a previous build installed.
+            storeFile file("debug.keystore")
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+        }
     }
 
     // =====================================================
@@ -47,6 +68,8 @@ android {
             debuggable true
 
             minifyEnabled false
+
+            signingConfig signingConfigs.debug
         }
 
         release {
@@ -172,8 +195,6 @@ dependencies {
     implementation 'com.hbb20:ccp:2.5.0'
     //implementation project(':VKChartLib')
     implementation project(':monthandyearpicker')
-    implementation 'com.github.AnyChart:AnyChart-Android:1.1.2'
-    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
     //Easy Permissions
     implementation 'pub.devrel:easypermissions:3.0.0'

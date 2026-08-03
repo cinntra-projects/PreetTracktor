@@ -129,7 +129,7 @@ class LogsActivity : BaseActivity() {
                         response.message?.let { Globals.warningMessage(this, it) }
                   } else if (response.status == 401) {
                         //sessionManagement.ClearSession()
-                        PrefsByShubh.ClearSession()
+                //        PrefsByShubh.ClearSession()
                         Globals.logoutScreen(this)
                   }
             }))

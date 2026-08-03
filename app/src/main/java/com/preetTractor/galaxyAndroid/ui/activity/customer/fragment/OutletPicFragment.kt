@@ -313,12 +313,10 @@ class OutletPicFragment : Fragment() {
         // Create an image file name
         val timeStamp: String = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
         val imageFileName = "JPEG_${timeStamp}_"
-        val storageDir = File(
-            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
-                .toString() + "/AnGService"
-        )
+        val storageDir = requireContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+            ?: requireContext().cacheDir
         if (!storageDir.exists()) {
-            storageDir.mkdir()
+            storageDir.mkdirs()
         }
         val image = File.createTempFile(imageFileName, ".png", storageDir)
 

@@ -63,7 +63,7 @@ class OtpActivity : AppCompatActivity() {
         binding.spinKitLoader.visibility = View.GONE
 
         setUpViewModel()
-
+        bindObserver()
         binding.tvMobileNo.text = PrefsByShubh.getMobileNO()
         binding.tvShowOtp.text = "Otp is: "+Prefs.getString(Globals.OTP).toString()
 
@@ -74,7 +74,7 @@ class OtpActivity : AppCompatActivity() {
             hashmap["OTP"] = OTPval
             viewModel.verifyOTP(hashmap, this)
 
-            bindObserver()
+
         }
 
         binding.ivBackPress.setOnClickListener {
@@ -95,7 +95,7 @@ class OtpActivity : AppCompatActivity() {
                 hashmap["OTP"] = otp
                 viewModel.verifyOTP(hashmap, this@OtpActivity)
 
-                bindObserver()
+
 
             }
         }
@@ -160,7 +160,7 @@ class OtpActivity : AppCompatActivity() {
                     finish()
 
                 } else if (response.status == 401) {
-                    PrefsByShubh.ClearSession()
+            //        PrefsByShubh.ClearSession()
                     Globals.logoutScreen(this)
 
                 } else {

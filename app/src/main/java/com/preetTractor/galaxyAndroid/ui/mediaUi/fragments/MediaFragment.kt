@@ -550,7 +550,7 @@ class MediaFragment : Fragment() {
 
 
                 } else if (response.status == 401) {
-                    PrefsByShubh.ClearSession()
+              //      PrefsByShubh.ClearSession()
                     Globals.logoutScreen(requireActivity())
 
                 } else {
@@ -608,7 +608,7 @@ class MediaFragment : Fragment() {
                     }
 
                 } else if (response.status == 401) {
-                    PrefsByShubh.ClearSession()
+               //     PrefsByShubh.ClearSession()
                     Globals.logoutScreen(requireActivity())
 
                 } else {

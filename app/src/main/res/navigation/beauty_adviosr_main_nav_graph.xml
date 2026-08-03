@@ -3,13 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_graph.xml"
-    app:startDestination="@id/dashboardBeautyAdvisorFragment">
+    app:startDestination="@id/beautyAdvisorFragment">
 
-    <fragment
-        android:id="@+id/dashboardBeautyAdvisorFragment"
-        android:name="com.preetTractor.galaxyAndroid.ui.fragment.BeautyAdvisorDashboardFragment"
-        android:label="fragment_beauty_advisor_dashboard"
-        tools:layout="@layout/fragment_beauty_advisor_dashboard" />
+
     <fragment
         android:id="@+id/beautyAdvisorFragment"
         android:name="com.preetTractor.galaxyAndroid.ui.fragment.BeautyAdvisorFragment"

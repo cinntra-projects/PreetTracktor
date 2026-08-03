@@ -1371,25 +1371,5 @@ class AddExpenseActivity : BaseActivity() {
         }
     }
 
-    override fun createImageFile(): File {
-        // Create an image file name
-        val timeStamp: String = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
-        val imageFileName = "JPEG_${timeStamp}_"
-        val storageDir = File(
-            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
-                .toString() + "/AnGService"
-        )
-        if (!storageDir.exists()) {
-            storageDir.mkdir()
-        }
-        val image = File.createTempFile(imageFileName, ".png", storageDir)
-
-        currentPhotoPath = image.absolutePath
-
-
-        return image
-    }
-
-
 }
 

@@ -188,12 +188,43 @@ class MainActivity : BaseActivity() {
     }
 
 
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == REQUEST_IMAGE_MAKE_MODEL_PHOTO && resultCode == RESULT_OK) {
             //  customerPhotoPath = getCustomerPhotoPath(data!!.data)
+            if (currentPhotoPath.isEmpty()) {
+                Toast.makeText(
+                    this,
+                    "Image path is empty",
+                    Toast.LENGTH_SHORT
+                ).show()
+                return
+            }
+
+            val imageFile = File(currentPhotoPath)
+
+            // On some OEM cameras (notably MIUI) the placeholder file we handed to the camera
+            // via FileProvider is left empty because the camera app ignores EXTRA_OUTPUT and
+            // returns the photo through the result Intent instead. Try to recover it from there
+            // before giving up.
+            if (!imageFile.exists() || imageFile.length() == 0L) {
+                val recovered = recoverPhotoFromResultIntent(data, imageFile)
+                if (!recovered) {
+                    AlertDialog.Builder(this)
+                        .setTitle("Image Not Found")
+                        .setMessage(
+                            "Camera returned successfully but image file was not created.\n\nPath:\n$currentPhotoPath"
+                        )
+                        .setPositiveButton("OK", null)
+                        .show()
+
+                    Log.e("Camera", "File Missing: $currentPhotoPath")
+                    return
+                }
+            }
+
+
             val compressedImageFile = try {
                 compressImageFile(this, File(currentPhotoPath))
             } catch (e: Exception) {
@@ -982,6 +1013,21 @@ class MainActivity : BaseActivity() {
 
     private var seconds: Long = 0
     private var running = false
+    private var batteryOptimizationRequested = false
+
+    private fun requestIgnoreBatteryOptimizationsOnce() {
+        if (batteryOptimizationRequested) return
+        val pm = getSystemService(POWER_SERVICE) as PowerManager
+        if (!pm.isIgnoringBatteryOptimizations(packageName)) {
+            batteryOptimizationRequested = true
+            val intent = Intent(
+                Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS
+            ).apply {
+                data = Uri.parse("package:$packageName")
+            }
+            startActivity(intent)
+        }
+    }
 
     override fun onResume() {
         super.onResume()
@@ -1040,6 +1086,7 @@ class MainActivity : BaseActivity() {
             binding.constraintToolbar.tvCheckInTextview.text ="Check Out"
             startService()
             callLogoutWorkManager()
+            requestIgnoreBatteryOptimizationsOnce()
 
         }
 
@@ -1105,18 +1152,6 @@ class MainActivity : BaseActivity() {
 
             if (running) {
                 seconds++
-            }
-            val pm = getSystemService(POWER_SERVICE) as PowerManager
-
-            if (!pm.isIgnoringBatteryOptimizations(packageName)) {
-
-                val intent = Intent(
-                    Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS
-                ).apply {
-                    data = Uri.parse("package:$packageName")
-                }
-
-                startActivity(intent)
             }
             if (!isGPSEnabled(this@MainActivity) || !LocationPermissionHelper.hasLocationPermission(
                     this@MainActivity

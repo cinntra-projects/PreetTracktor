@@ -50,9 +50,8 @@ class ProfileActivity : BaseActivity() {
         binding = ProfileActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
         callGalaxyProfile()
-
         binding.apply {
-//            tvAppVersion.text = BuildConfig.FORCED_VERSION_NAME
+            tvAppVersion.text = "Version -" + BuildConfig.VERSION_NAME
 
             logout.setOnClickListener {
                 if (!PrefsByShubh.getBoolean(Globals.isCheckingStart, false)) {
@@ -128,10 +127,11 @@ class ProfileActivity : BaseActivity() {
 
                             if (body.status == 200) {
 
-                                PrefsByShubh.putString("role", "")
                                 PrefsByShubh.clear()
                                 Prefs.clear()
-
+                                WebSocketManager.clearEvents()
+                                WebSocketManager.disconnect()
+                                Globals.loginIntoAnotherDevice = false
                                 val intent =
                                     Intent(this@ProfileActivity, SplashActivity::class.java).apply {
                                         flags =
@@ -145,6 +145,7 @@ class ProfileActivity : BaseActivity() {
                                     Toast.LENGTH_SHORT
                                 ).show()
                                 PrefsByShubh.clear()
+                                PrefsByShubh.ClearSession()
                                 Prefs.clear()
                                 //sessionManagement.ClearSession()
                                 WebSocketManager.clearEvents()
@@ -353,26 +354,6 @@ class ProfileActivity : BaseActivity() {
     override var currentPhotoPath = ""
     override var makeModelPhoto = ""
     override lateinit var fileMakeModelPhotoUri: Uri
-
-    override fun createImageFile(): File {
-        // Create an image file name
-        val timeStamp: String = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
-        val imageFileName = "JPEG_${timeStamp}_"
-        val storageDir = File(
-            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
-                .toString() + "/AnGService"
-        )
-        if (!storageDir.exists()) {
-            storageDir.mkdir()
-        }
-        val image = File.createTempFile(imageFileName, ".png", storageDir)
-
-        currentPhotoPath = image.absolutePath
-
-
-        return image
-    }
-
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)

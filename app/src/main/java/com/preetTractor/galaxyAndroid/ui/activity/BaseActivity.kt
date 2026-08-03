@@ -56,55 +56,28 @@ abstract class BaseActivity : AppCompatActivity() {
         Manifest.permission.WRITE_EXTERNAL_STORAGE
     )
 
+    companion object {
+        private const val KEY_CURRENT_PHOTO_PATH = "base_activity_current_photo_path"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d("Socket", "Status = ${WebSocketManager.isConnected}")
-        if(Globals.loginIntoAnotherDevice){
-            showSessionExpiredDialog()
-        }
-        lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
+        // On low-memory devices, launching the system camera app can get this activity's
+        // process killed in the background. Android then recreates it from savedInstanceState
+        // before delivering onActivityResult, so currentPhotoPath (a plain in-memory field)
+        // resets to "" unless we restore it here — the captured file on disk survives, only
+        // this path variable does not.
+        savedInstanceState?.getString(KEY_CURRENT_PHOTO_PATH)?.let { currentPhotoPath = it }
 
-                WebSocketManager.events.collect { message ->
-
-                    Log.d("Socket", "Collector Received: $message")
-
-                    val json = JSONObject(message)
-
-                    val type = json.optString("type")
-
-                    if (type == "signout_notification") {
-                        showSessionExpiredDialog()
-                    }
-                }
-            }
-        }
     }
 
-    private fun showSessionExpiredDialog() {
-
-        AlertDialog.Builder(this)
-            .setTitle("Session Expired")
-            .setMessage("Your account has been logged in from another device.")
-            .setCancelable(false)
-            .setPositiveButton("OK") { _, _ ->
-
-                Prefs.clear()
-                Globals.loginIntoAnotherDevice = false
-                PrefsByShubh.clear()
-                WebSocketManager.clearEvents()
-                WebSocketManager.disconnect()
-                startActivity(
-                    Intent(
-                        this,
-                        ActivitySignIn::class.java
-                    )
-                )
-
-                finishAffinity()
-            }
-            .show()
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(KEY_CURRENT_PHOTO_PATH, currentPhotoPath)
     }
+
+
 
     fun checkAndRequestNotificationPermission() {
         if (ContextCompat.checkSelfPermission(
@@ -182,12 +155,14 @@ abstract class BaseActivity : AppCompatActivity() {
         // Create an image file name
         val timeStamp: String = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
         val imageFileName = "JPEG_${timeStamp}_"
-        val storageDir = File(
-            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
-                .toString() + "/AnGService"
-        )
+        // Using the public Pictures directory (Environment.getExternalStoragePublicDirectory)
+        // is unreliable on scoped-storage devices (Android 10+) and on several OEM builds the
+        // directory/file silently fails to be created, so the camera later writes nothing at
+        // that path and the upload fails with "open failed: ENOENT". The app-specific external
+        // files dir doesn't need any storage permission and is guaranteed to exist.
+        val storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES) ?: cacheDir
         if (!storageDir.exists()) {
-            storageDir.mkdir()
+            storageDir.mkdirs()
         }
         val image = File.createTempFile(imageFileName, ".png", storageDir)
 
@@ -198,28 +173,104 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 
 
-
     open fun dispatchMakeModelPictureIntent() {
+
+        val storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+
+        if (storageDir == null) {
+            AlertDialog.Builder(this)
+                .setTitle("Storage Error")
+                .setMessage("Unable to access device storage. Please check available storage and try again.")
+                .setPositiveButton("OK", null)
+                .show()
+            return
+        }
+
+        if (!storageDir.exists()) {
+            storageDir.mkdirs()
+        }
+
+        if (!storageDir.canWrite()) {
+            AlertDialog.Builder(this)
+                .setTitle("Storage Permission")
+                .setMessage("Unable to write image to storage.")
+                .setPositiveButton("OK", null)
+                .show()
+            return
+        }
+
         Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
             takePictureIntent.resolveActivity(packageManager)?.also {
-                var photoFile: File? = try {
+
+                val photoFile = try {
                     createImageFile()
-                } catch (ex: java.io.IOException) {
-                    Toast.makeText(
-                        this, "Error occurred while creating the file", Toast.LENGTH_SHORT
-                    ).show()
+                } catch (e: Exception) {
+                    AlertDialog.Builder(this)
+                        .setTitle("Camera Error")
+                        .setMessage("Unable to create image file.")
+                        .setPositiveButton("OK", null)
+                        .show()
                     null
                 }
-                photoFile?.also {
-                    val photoURI: Uri = FileProvider.getUriForFile(
-                        this, "${BuildConfig.APPLICATION_ID}.FileProvider", it
+
+                photoFile?.let { file ->
+
+                    val photoUri = FileProvider.getUriForFile(
+                        this,
+                        "${BuildConfig.APPLICATION_ID}.FileProvider",
+                        file
                     )
-//                    val photoURI: Uri = Uri.fromFile(it) //todo ==> using Uri.fromFile to create the URI for the photo file, which leads to a FileUriExposedException on Android 7.0 and above
-                    takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
-                    startActivityForResult(takePictureIntent, REQUEST_IMAGE_MAKE_MODEL_PHOTO)
+
+                    takePictureIntent.putExtra(
+                        MediaStore.EXTRA_OUTPUT,
+                        photoUri
+                    )
+
+                    takePictureIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                    takePictureIntent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
+
+                    startActivityForResult(
+                        takePictureIntent,
+                        REQUEST_IMAGE_MAKE_MODEL_PHOTO
+                    )
                 }
             }
         }
+    }
+
+    // Some OEM camera apps (MIUI in particular) don't reliably honor EXTRA_OUTPUT and instead
+    // hand the captured image back through the result Intent (as a content Uri, or occasionally
+    // just a thumbnail Bitmap in the "data" extra) while leaving our target file at 0 bytes.
+    // This pulls the image from whichever of those the camera actually gave us.
+    fun recoverPhotoFromResultIntent(data: Intent?, destFile: File): Boolean {
+        val uri = data?.data
+        if (uri != null) {
+            try {
+                contentResolver.openInputStream(uri)?.use { input ->
+                    FileOutputStream(destFile).use { output ->
+                        input.copyTo(output)
+                    }
+                }
+                if (destFile.exists() && destFile.length() > 0L) return true
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+
+        @Suppress("DEPRECATION")
+        val thumbnail = data?.extras?.get("data") as? Bitmap
+        if (thumbnail != null) {
+            try {
+                FileOutputStream(destFile).use { output ->
+                    thumbnail.compress(Bitmap.CompressFormat.JPEG, 90, output)
+                }
+                if (destFile.exists() && destFile.length() > 0L) return true
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+
+        return false
     }
 
     fun compressImageFile(context: Context, imageFile: File): File {

@@ -202,7 +202,7 @@ class SchemeOneActivity : BaseActivity() {
                 Globals.warningMessage(this, response.message)
             } else if (response.status == 401) {
                 //sessionManagement.ClearSession()
-                PrefsByShubh.ClearSession()
+         //       PrefsByShubh.ClearSession()
                 Globals.logoutScreen(this)
 
             } else {
@@ -314,7 +314,7 @@ class SchemeOneActivity : BaseActivity() {
 
             } else if (response.status == 401) {
                 //sessionManagement.ClearSession()
-                PrefsByShubh.ClearSession()
+           //     PrefsByShubh.ClearSession()
                 Globals.logoutScreen(this)
 
             } else {

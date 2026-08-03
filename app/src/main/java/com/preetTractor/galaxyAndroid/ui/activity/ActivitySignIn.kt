@@ -60,7 +60,8 @@ class ActivitySignIn : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        PrefsByShubh.ClearSession()
+        Prefs.clear()
         getFCMToken()
 
         binding.countryPickerAlternate.setOnCountryChangeListener(CountryCodePicker.OnCountryChangeListener {
@@ -163,7 +164,7 @@ class ActivitySignIn : AppCompatActivity() {
                                 PrefsByShubh.setMobileNo(binding.edtMobileNo.text.toString())
 
 
-                                if (PrefsByShubh.getMPINValue().equals("")) {
+                              /*  if (PrefsByShubh.getMPINValue().equals("")) {
                                     var intent: Intent =
                                         Intent(this@ActivitySignIn, OtpActivity::class.java)
                                     startActivity(intent)
@@ -180,7 +181,10 @@ class ActivitySignIn : AppCompatActivity() {
                                     startActivity(i)
                                     finish()
 
-                                }
+                                }*/
+                                var intent: Intent =
+                                    Intent(this@ActivitySignIn, OtpActivity::class.java)
+                                startActivity(intent)
 
                             }
                         } else if (response.body()?.status == 400) {
@@ -331,7 +335,7 @@ class ActivitySignIn : AppCompatActivity() {
 
 
                     } else if (response.body()?.status == 401) {
-                        PrefsByShubh.ClearSession()
+                   //     PrefsByShubh.ClearSession()
                         PrefsByShubh.putString("role", "")
                         Globals.logoutScreen(this@ActivitySignIn)
 

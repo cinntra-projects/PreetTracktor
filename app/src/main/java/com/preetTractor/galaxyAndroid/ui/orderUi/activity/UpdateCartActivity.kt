@@ -254,7 +254,7 @@ class UpdateCartActivity : AppCompatActivity() {
                          Globals.warningMessage(this, response.message)
                   } else if (response.status == 401) {
                         //sessionManagement.ClearSession()
-                        PrefsByShubh.ClearSession()
+                    //    PrefsByShubh.ClearSession()
                          Globals.logoutScreen(this)
 
                   }
@@ -609,7 +609,7 @@ class UpdateCartActivity : AppCompatActivity() {
                         Globals.warningMessage(this, response.message)
                   } else if (response.status == 401) {
                         //sessionManagement.ClearSession()
-                        PrefsByShubh.ClearSession()
+                     //   PrefsByShubh.ClearSession()
                         Globals.logoutScreen(this)
 
                   } else {
@@ -713,7 +713,7 @@ class UpdateCartActivity : AppCompatActivity() {
                         Globals.warningMessage(this, response.message)
                   } else if (response.status == 401) {
                         //sessionManagement.ClearSession()
-                        PrefsByShubh.ClearSession()
+                   //     PrefsByShubh.ClearSession()
                         Globals.logoutScreen(this)
 
                   } else {

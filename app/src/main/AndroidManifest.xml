@@ -17,9 +17,8 @@
 
     <application
         android:name=".BaseApplication"
-        android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
+        android:allowBackup="false"
+        android:fullBackupContent="false"
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/config"
         android:requestLegacyExternalStorage="true"
@@ -29,8 +28,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KotlinFlows"
         android:usesCleartextTraffic="true"
-        tools:replace="android:label, android:theme, android:icon"
-        tools:targetApi="31">
+        tools:replace="android:label, android:theme, android:icon, android:allowBackup"
+        tools:targetApi="35">
         <service
             android:name=".MyFirebaseMessagingService"
             android:exported="false">
@@ -66,48 +65,60 @@
         <activity
             android:name=".ui.orderUi.activity.OrderDetailsActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/FullScreenMateial" />
         <activity
             android:name=".ui.activity.log.LogsActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/FullScreenMateial" />
         <activity
             android:name=".ui.orderUi.activity.AddOrderActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/FullScreenMateial" />
         <activity
             android:name=".ui.orderUi.activity.PreviousOrderDetailsActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/FullScreenMateial" />
         <activity
             android:name=".ui.activity.BeatPlanActivity2"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".ui.activity.VisitBeatPlanActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".ui.activity.ProfileActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/FullScreenMateial" />
         <activity
             android:name=".ui.activity.customer.CustomerProfileAndOutletPicActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/FullScreenMateial" />
         <activity
             android:name=".ui.orderUi.activity.PendingOrderWiseActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/FullScreenMateial" />
         <activity
             android:name=".ui.orderUi.activity.SubCategoryListActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/FullScreenMateial" />
         <activity
             android:name=".searchUi.ui.activity.SearchActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/FullScreenMateial" />
         <activity
             android:name=".ui.orderUi.activity.UpdateCartActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/FullScreenMateial" />
         <activity
             android:name=".ui.orderUi.activity.OrderUnderApprovalOneDetailActivity"
@@ -116,49 +127,61 @@
         <activity
             android:name=".ui.orderUi.activity.OrderUnderApprovalActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/FullScreenMateial" />
         <activity
             android:name=".ui.orderUi.activity.ItemOneActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/FullScreenMateial" />
         <activity
             android:name=".ui.orderUi.activity.CartActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/FullScreenMateial" />
         <activity
             android:name=".ui.orderUi.activity.ItemListFromSubCategoryOrderRequestActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/FullScreenMateial" />
         <activity
             android:name=".ui.orderUi.activity.ItemListFromSchemesActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/FullScreenMateial" />
         <activity
             android:name=".ui.activity.customer.CustomerDetailActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/FullScreenMateial"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".ui.activity.test.TestHerarchyActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/FullScreenMateial" />
         <activity
             android:name=".ui.activity.otpAndMpinScreen.ForgotMPINActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/FullScreenMateial" />
         <activity
             android:name=".demo.ExpendableListActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".ui.activity.AttendanceActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/FullScreenMateial" />
         <activity
             android:name=".ui.activity.beat.BeatPlanApprovalActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".ui.activity.BeatPlanActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/FullScreenMateial" />
         <activity
             android:name=".ui.activity.LeaveActivity"
@@ -265,7 +288,7 @@
                  -->
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.preetTractor.galaxyAndroid.FileProvider"
+            android:authorities="${applicationId}.FileProvider"
             android:exported="false"
             android:grantUriPermissions="true"
             tools:replace="android:authorities">

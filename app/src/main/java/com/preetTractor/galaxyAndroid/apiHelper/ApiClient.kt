@@ -88,7 +88,7 @@ class ApiClient {
 
             if (response.code == 301 || response.code == 401) {
 
-                PrefsByShubh.ClearSession()
+               // PrefsByShubh.ClearSession()
                 logoutScreen(context)
                 return@Interceptor response
             }

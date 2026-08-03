@@ -421,7 +421,7 @@ class CustomerDetailActivity : BaseActivity() {
                 Globals.warningMessage(this, response.message)
             } else if (response.status == 401) {
                 //sessionManagement.ClearSession()
-                PrefsByShubh.ClearSession()
+             //   PrefsByShubh.ClearSession()
                 Globals.logoutScreen(this)
 
             }
@@ -474,26 +474,6 @@ class CustomerDetailActivity : BaseActivity() {
     override var currentPhotoPath = ""
     override var makeModelPhoto = ""
     override lateinit var fileMakeModelPhotoUri: Uri
-
-    override fun createImageFile(): File {
-        // Create an image file name
-        val timeStamp: String =
-            SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(Date())
-        val imageFileName = "JPEG_${timeStamp}_"
-        val storageDir = File(
-            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
-                .toString() + "/AnGService"
-        )
-        if (!storageDir.exists()) {
-            storageDir.mkdir()
-        }
-        val image = File.createTempFile(imageFileName, ".png", storageDir)
-
-        currentPhotoPath = image.absolutePath
-
-
-        return image
-    }
 
     private fun replaceFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()

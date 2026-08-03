@@ -413,15 +413,16 @@ class LocationService : Service() {
                     if (response.isSuccessful && response.body()?.status == 200) {
                         Globals.offlineLatLong.clear()
                         Log.d(TAG, "Upload success")
-                    }else{
+                    }/*else{
                         Globals.loginIntoAnotherDevice = true
-                        Globals.offlineLatLong.clear()
+                        serviceScope.cancel()
+                        stopLocation()
                         Toast.makeText(
                             applicationContext,
                             "Your account logged in on another device",
                             Toast.LENGTH_LONG
                         ).show()
-                    }
+                    }*/
                 }
 
                 override fun onFailure(call: Call<ResponseGlobal>, t: Throwable) {

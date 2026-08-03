@@ -142,7 +142,7 @@ class MPINActivity : AppCompatActivity() {
                         finishAffinity()
 
                     } else if (response.body()?.status === 401) {
-                        Prefs.clear()
+                      //  Prefs.clear()
                         Globals.logoutScreen(this@MPINActivity)
                     } else if (response.body()?.status!! == 400) {
                         binding.continueBtn.isEnabled = true

@@ -285,7 +285,7 @@ class AddOrderActivity : AppCompatActivity(), ItemInBaOrderAdapter.OnQuantityCha
                         Globals.warningMessage(this, response.message)
                   } else if (response.status == 401) {
                         //sessionManagement.ClearSession()
-                        PrefsByShubh.ClearSession()
+                      //  PrefsByShubh.ClearSession()
                         Globals.logoutScreen(this)
 
                   }
@@ -373,7 +373,7 @@ class AddOrderActivity : AppCompatActivity(), ItemInBaOrderAdapter.OnQuantityCha
 
                         } else if (response.status == 401) {
                               //sessionManagement.ClearSession()
-                              PrefsByShubh.ClearSession()
+                       //       PrefsByShubh.ClearSession()
                               Globals.logoutScreen(this)
 
                         } else {
@@ -411,7 +411,7 @@ class AddOrderActivity : AppCompatActivity(), ItemInBaOrderAdapter.OnQuantityCha
 
                         } else if (response.status == 401) {
                               //sessionManagement.ClearSession()
-                              PrefsByShubh.ClearSession()
+                          //    PrefsByShubh.ClearSession()
                               Globals.logoutScreen(this)
 
                         } else {
@@ -464,7 +464,7 @@ class AddOrderActivity : AppCompatActivity(), ItemInBaOrderAdapter.OnQuantityCha
 
                         } else if (response.status == 401) {
                               //sessionManagement.ClearSession()
-                              PrefsByShubh.ClearSession()
+                       //       PrefsByShubh.ClearSession()
                               Globals.logoutScreen(this)
 
                         } else {
@@ -576,7 +576,7 @@ class AddOrderActivity : AppCompatActivity(), ItemInBaOrderAdapter.OnQuantityCha
 
                         401 -> {
                               //sessionManagement.ClearSession()
-                              PrefsByShubh.ClearSession()
+                      //        PrefsByShubh.ClearSession()
                               Globals.logoutScreen(this)
 
                         }

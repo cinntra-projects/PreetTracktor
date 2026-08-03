@@ -220,7 +220,7 @@ class SubCategoryListActivity : AppCompatActivity() {
 
                   } else if (response.status == 401) {
                         //sessionManagement.ClearSession()
-                        PrefsByShubh.ClearSession()
+                 //       PrefsByShubh.ClearSession()
                         Globals.logoutScreen(this)
 
                   } else {

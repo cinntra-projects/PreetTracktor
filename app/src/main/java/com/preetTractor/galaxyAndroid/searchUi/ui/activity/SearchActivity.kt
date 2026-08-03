@@ -239,7 +239,7 @@ class SearchActivity : AppCompatActivity() {
 
             } else if (response.status == 401) {
                 //sessionManagement.ClearSession()
-                PrefsByShubh.ClearSession()
+          //      PrefsByShubh.ClearSession()
                 Globals.logoutScreen(this)
 
             } else {
@@ -307,7 +307,7 @@ class SearchActivity : AppCompatActivity() {
 
             } else if (response.status == 401) {
                 //sessionManagement.ClearSession()
-                PrefsByShubh.ClearSession()
+              //  PrefsByShubh.ClearSession()
                 Globals.logoutScreen(this)
 
             } else {
@@ -350,7 +350,7 @@ class SearchActivity : AppCompatActivity() {
                 )
             } else if (response.status == 401) {
                 //sessionManagement.ClearSession()
-                PrefsByShubh.ClearSession()
+              //  PrefsByShubh.ClearSession()
                 Globals.logoutScreen(this)
 
             } else {

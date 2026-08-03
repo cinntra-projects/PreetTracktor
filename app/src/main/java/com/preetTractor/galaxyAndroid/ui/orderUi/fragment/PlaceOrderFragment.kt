@@ -307,7 +307,7 @@ class PlaceOrderFragment : Fragment() {
 
                         } else if (response.status == 401) {
                               //sessionManagement.ClearSession()
-                              PrefsByShubh.ClearSession()
+                            //  PrefsByShubh.ClearSession()
                               Globals.logoutScreen(requireActivity())
 
                         } else {
@@ -338,7 +338,7 @@ class PlaceOrderFragment : Fragment() {
 
                   } else if (response.status == 401) {
                         //sessionManagement.ClearSession()
-                        PrefsByShubh.ClearSession()
+                     //   PrefsByShubh.ClearSession()
                         Globals.logoutScreen(requireActivity())
 
                   } else {

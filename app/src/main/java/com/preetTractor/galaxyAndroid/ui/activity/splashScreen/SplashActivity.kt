@@ -230,11 +230,11 @@ class SplashActivity : AppCompatActivity() {
                         )
                         spinKitLoader.visibility = View.GONE
 
-                        Prefs.clear()
+                   //     Prefs.clear()
                         var intent = Intent(this@SplashActivity, ActivitySignIn::class.java)
                         startActivity(intent)
                         finish()
-                        PrefsByShubh.ClearSession()
+                    //    PrefsByShubh.ClearSession()
 
                     } else {
                         spinKitLoader.visibility = View.GONE
